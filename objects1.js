@@ -28,6 +28,15 @@ const programmers = [
             {name: 'Go', specialty: 'Desktop'},
             {name: 'Kotlin', specialty: 'Mobile'}
         ]
+    },
+    {
+        name: 'Kel',
+        age: '26',
+        tecnologies: [
+            {name: 'CSS', specialty: 'Web Front End'},
+            {name: 'UX Design', specialty: 'Web Front End'},
+            {name: 'HTML', specialty: 'Web'}
+        ]
     }
 ] 
 
@@ -39,7 +48,7 @@ identifyTecnologies = (anObject) => {
             if(j !== tecnologiesLength - 1)
                 tecnologies += anObject.tecnologies[j].name + ` (${anObject.tecnologies[j].specialty})` + ", ";
             else
-                tecnologies += anObject.tecnologies[j].name + ` (${anObject.tecnologies[j].specialty})`; 
+                tecnologies +=  anObject.tecnologies[j].name + ` (${anObject.tecnologies[j].specialty})`; 
         }
     console.log(tecnologies);
 }
@@ -50,10 +59,23 @@ identifyTecnologies = (anObject) => {
 identifyProgrammers = (anArray) => {
     let anArrayLength = anArray.length;
     for(let i = 0; i < anArrayLength; i++) {
-        console.log(`${anArray[i].name} knows the following tecnologies: `);
+        console.log(`${anArray[i].name} works with the following tecnologies: `);
         identifyTecnologies(anArray[i]);
     }
 }
 
 //Execution
-identifyProgrammers(programmers);
+//identifyProgrammers(programmers);
+
+//Check if a programmer works with CSS
+function checkIfWorksWithCSS(aProgrammer) {
+    let numberOfTecnologies = aProgrammer.tecnologies.length;
+    let worksWithCSS = false;
+    for(let i = 0; i < numberOfTecnologies; i++) {
+        if(aProgrammer.tecnologies[i].name === "CSS")
+            worksWithCSS = true;
+    }
+    console.log(worksWithCSS);
+}
+
+checkIfWorksWithCSS(programmers[0]);
