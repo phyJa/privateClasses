@@ -75,7 +75,23 @@ function checkIfWorksWithCSS(aProgrammer) {
         if(aProgrammer.tecnologies[i].name === "CSS")
             worksWithCSS = true;
     }
-    console.log(worksWithCSS);
+    return worksWithCSS;
 }
 
-checkIfWorksWithCSS(programmers[0]);
+//Print a message saying if a programmer works with CSS
+function printMessage(aProgrammer) {
+    if(checkIfWorksWithCSS(aProgrammer))
+        console.log(`${aProgrammer.name} works with CSS.`);
+    else
+        console.log(`${aProgrammer.name} does not work with CSS.`);
+}
+
+//Iterate over the array data and execute printMessage 
+function showEverybody(programmers) {
+    for(let programmer of programmers) {
+        printMessage(programmer);
+    }
+}
+
+//Execution
+showEverybody(programmers);
