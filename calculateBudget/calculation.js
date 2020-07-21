@@ -30,6 +30,16 @@ function calculateTotal (aPersonRevenues, aPersonSpendings) {
     return summing(aPersonRevenues) - summing(aPersonSpendings);
 }
 
+//Print the message
+function printMessage(aProgrammer) {
+    let aProgrammerBudget = calculateTotal(aProgrammer.revenues, aProgrammer.spendings);
+    if(aProgrammerBudget > 0)
+        console.log(`${aProgrammer.name} has a POSITIVE budget of ${aProgrammerBudget}.`);
+    else if(aProgrammerBudget === 0)
+        console.log(`${aProgrammer.name} has a budget of ${aProgrammerBudget}.`);
+    else
+        console.log(`${aProgrammer.name} has a NEGATIVE budget of ${aProgrammerBudget}.`);
+}
 
-
-console.log(calculateTotal(users[0].revenues, users[0].spendings));
+//List everybody
+for(let user of users) { printMessage(user); }
