@@ -18,6 +18,10 @@ const newTransactions = [
         value: 120
     },
     {
+        type: 'credit',
+        value: 90
+    },
+    {
         type: 'debit',
         value: 80
     },
@@ -54,10 +58,8 @@ function getHigherTransactionByType (aUser, type) {
     for(let i = 0; i < numberOfTransactions; i++) {
         if(aUser.transactions[i].type === "credit" && aUser.transactions[i].value >= higherCreditValue)
             higherCreditValue = aUser.transactions[i].value;
-        else {
-            if(aUser.transactions[i].value > higherDebitValue)
-                higherDebitValue = aUser.transactions[i].value;
-        }
+        else if(aUser.transactions[i].type === "debit" && aUser.transactions[i].value > higherDebitValue)
+            higherDebitValue = aUser.transactions[i].value;
     }
     if(type === "credit")
         return { type: "credit", value: higherCreditValue };
@@ -66,4 +68,4 @@ function getHigherTransactionByType (aUser, type) {
 }
 
 //Testing
-console.log(getHigherTransactionByType(user, "credit"))
+console.log(getHigherTransactionByType(user, "debit"))
