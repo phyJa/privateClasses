@@ -11,7 +11,7 @@ const newTransactions = [
     },
     {
         type: 'credit',
-        value: 120
+        value: 150
     },
     {
         type: 'credit',
@@ -58,7 +58,7 @@ function getHigherTransactionByType (aUser, type) {
     for(let i = 0; i < numberOfTransactions; i++) {
         if(aUser.transactions[i].type === "credit" && aUser.transactions[i].value >= higherCreditValue)
             higherCreditValue = aUser.transactions[i].value;
-        else if(aUser.transactions[i].type === "debit" && aUser.transactions[i].value > higherDebitValue)
+        else if(aUser.transactions[i].type === "debit" && aUser.transactions[i].value >= higherDebitValue)
             higherDebitValue = aUser.transactions[i].value;
     }
     if(type === "credit")
@@ -68,4 +68,17 @@ function getHigherTransactionByType (aUser, type) {
 }
 
 //Testing
-console.log(getHigherTransactionByType(user, "debit"))
+//console.log(getHigherTransactionByType(user, "credit"))
+
+//Getting the average transaction value of a user
+function getAverageTransactionValue (aUser) {
+    let userTransactions = aUser.transactions,
+        numberOfTransactions = userTransactions.length,
+        total = 0;
+    for(let i = 0; i < numberOfTransactions; i++){
+        total += aUser.transactions[i].value;
+    }
+    return (total/numberOfTransactions);
+}
+
+console.log(getAverageTransactionValue(user));
