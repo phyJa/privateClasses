@@ -28,6 +28,10 @@ const newTransactions = [
     {
         type: 'debit',
         value: 30
+    },
+    {
+        type: 'debit',
+        value: 120
     }
 ]
 
@@ -81,4 +85,18 @@ function getAverageTransactionValue (aUser) {
     return (total/numberOfTransactions);
 }
 
-console.log(getAverageTransactionValue(user));
+//console.log(getAverageTransactionValue(user));
+
+//Getting an object which counts the number of "credit" and "debit" transactions
+function getTransactionsCount (aUser) {
+    const countingTransactions = {credit: 0, debit: 0};
+    for(let aUserTransaction of aUser.transactions){
+        if(aUserTransaction.type === "credit")
+            countingTransactions.credit++;
+        else
+            countingTransactions.debit++;
+    }
+    return countingTransactions;
+}
+
+console.log(getTransactionsCount(user));
