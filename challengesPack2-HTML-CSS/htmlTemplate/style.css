@@ -45,7 +45,7 @@ body {
 
 .description img {
     height: 200px;
-    margin-bottom: 30px;
+    margin: 15px 0;
     border-radius: 8px;
 }
 
