@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --color-theme: rgb(42, 9, 9);
-    --color-links: tomato; 
+    --color-theme: rgb(31, 7, 34);
+    --color-links: rgb(75, 112, 146); 
 }
 
 * {
