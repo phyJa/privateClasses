@@ -75,3 +75,45 @@ footer.links a {
     border-bottom: solid 2px var(--color-links);
     font-size: 18px;
 }
+
+
+/* ==== Courses ====*/
+.coursesContainer {
+    margin: 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    padding: 20px;
+}
+
+.course {
+    background-color: rgb(37, 33, 47);
+    margin: 20px 0;
+    padding: 50px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    border: 2px solid rgb(37, 33, 47);
+    transition: border 500ms;
+    cursor: pointer;
+}
+
+#starter:hover {
+    border: 2px solid rgb(100, 100, 200)
+}
+
+#launchBase:hover {
+    border: 2px solid rgb(200, 157, 100)
+}
+
+#goStack:hover {
+    border: 2px solid rgb(108, 200, 100)
+}
+
+.course img {
+    margin-bottom: 80px;
+}
