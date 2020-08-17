@@ -45,6 +45,10 @@ body {
     border-radius: 4px;
 }
 
+
+
+/* ==== About page ===== */
+
 .description {
     margin-top: 20px;
     text-align: center;
@@ -113,6 +117,46 @@ footer.links a {
     cursor: pointer;
 }
 
+.course img {
+    margin-bottom: 50px;
+}
+
+.course h3 {
+    margin-bottom: 50px;
+}
+
+.course ul.courseInformation {
+    list-style-type: none;
+    background-color: rgb(200, 195, 195, 0.2);
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course ul.courseInformation li {
+    font-size: 20px;
+    line-height: 30px;
+    width: 50%;
+}
+
+.course ul.courseInformation li:nth-of-type(1) {
+    border-bottom: 2px solid rgb(136, 68, 136);
+}
+
+.free {
+    color: rgb(79, 141, 79);
+    font-weight: bold;
+}
+
+.paid {
+    color: rgb(228, 228, 99);
+    font-weight: bold;
+}
+
 #starter:hover {
     border: 2px solid rgb(100, 100, 200)
 }
@@ -125,6 +169,3 @@ footer.links a {
     border: 2px solid rgb(108, 200, 100)
 }
 
-.course img {
-    margin-bottom: 80px;
-}
