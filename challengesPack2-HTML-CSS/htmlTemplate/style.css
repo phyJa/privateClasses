@@ -192,17 +192,18 @@ h2 {
     justify-content: center;
 }
 
-.closeModal {
+#closeModal {
     color: red;
     position: absolute;
     top: 2%;
     right: 2%;
+    cursor: pointer;
 }
 
 .modal {
     position: relative;
-    width: 80%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
     background-color: rgb(200, 200, 200);
     padding: 1%;
     display: flex;
