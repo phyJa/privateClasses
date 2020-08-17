@@ -217,3 +217,7 @@ h2 {
     border-radius: 8px;
 }
 
+.notDisplay {
+    display: none;
+}
+
