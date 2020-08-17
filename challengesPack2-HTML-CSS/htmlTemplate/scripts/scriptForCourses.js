@@ -4,6 +4,9 @@ const modalOverlay = document.querySelector(".modalOverlay");
 // Add the close modal element in variable
 const closingModal = modalOverlay.querySelector("#closeModal");
 
+// Get the iframe too
+const iframe = modalOverlay.querySelector("iframe");
+
 // Add the cards in a variable
 const courses = document.querySelectorAll(".course");
 
@@ -11,7 +14,11 @@ const courses = document.querySelectorAll(".course");
 for(let course of courses) {
     course.addEventListener("click",
         () => {
-            modalOverlay.classList.remove("notDisplay")
+            // Remove the class notDisplay
+            modalOverlay.classList.remove("notDisplay");
+
+            // Add the source attribute
+            iframe.setAttribute("src", `https://rocketseat.com.br/${course.id}`);
         }    
     )
 }
@@ -21,5 +28,8 @@ for(let course of courses) {
 closingModal.addEventListener("click", 
     () => {
         modalOverlay.classList.add("notDisplay");
+
+        // Add the source attribute as empty
+        iframe.setAttribute("src", "");
     }
 )

@@ -170,12 +170,12 @@ h2 {
     background-color: rgb(100, 100, 200, 0.3);
 }
 
-#launchBase:hover {
+#launchbase:hover {
     border: 2px solid rgb(200, 157, 100);
     background-color: rgb(200, 157, 100, 0.3);
 }
 
-#goStack:hover {
+#gostack:hover {
     border: 2px solid rgb(108, 200, 100);
     background-color: rgb(108, 200, 100, 0.3);
 }
