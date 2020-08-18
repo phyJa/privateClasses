@@ -2,7 +2,7 @@
 
 :root {
     --color-theme: rgb(31, 7, 34);
-    --color-links: rgb(108, 75, 146); 
+    --color-links: rgb(128, 95, 167); 
 }
 
 * {
@@ -29,7 +29,8 @@ body {
     margin: 0 30px;
     border: 2px solid rgba(7, 1, 1, 0.596);
     border-radius: 8px;
-    padding: 5px 10px;
+    padding: 5px 15px;
+    font-size: 18px;
 }
 
 .links a:hover {
@@ -260,12 +261,17 @@ h2 {
     }
 
     #closeModal {
-        top: 1%;
+        top: 2.2%;
     }
     
     #maximizeModal {
-        top: 1%;
-        right: 15%;
+        top: 2.2%;
+        right: 8%;
+    }
+
+    #disMaximizeModal {
+        top: 2.2%;
+        right: 8%;
     }
 }
 
@@ -288,6 +294,20 @@ h2 {
         font-size: 16px;
         width: 80%;
         margin: 30px auto;
+    }
+
+    #closeModal {
+        top: 1.6%;
+    }
+
+    #maximizeModal {
+        top: 1.6%;
+        right: 15%;
+    }
+
+    #disMaximizeModal {
+        top: 1.6%;
+        right: 15%;
     }
 }
 
