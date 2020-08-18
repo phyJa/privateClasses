@@ -43,6 +43,9 @@ closingModal.addEventListener("click",
 
         //Remove the maxmimized class
         modal.classList.remove("maximize");
+
+        // Take the maximizeModal element and display it again
+        maximizeModal.style.display = "inline";
     }
 )
 
@@ -55,6 +58,9 @@ maximizeModal.addEventListener("click",
 
             // Insert the display class in the disMaximize icon
             disMaximizeModal.style.display = "inline";
+
+            // Take the maximizeModal element and remove it from the display
+            maximizeModal.style.display = "none";
         }
         else{
             // Remove the maximize class
