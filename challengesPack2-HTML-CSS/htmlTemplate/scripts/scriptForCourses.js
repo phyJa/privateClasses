@@ -10,6 +10,9 @@ const closingModal = modalOverlay.querySelector("#closeModal");
 // Add the maximizeModal icon into a variable
 const maximizeModal = modalOverlay.querySelector("#maximizeModal");
 
+// Add the disMaximizeModal icon into a variable
+const disMaximizeModal = modalOverlay.querySelector("#disMaximizeModal");
+
 // Get the iframe too
 const iframe = modalOverlay.querySelector("iframe");
 
@@ -46,9 +49,20 @@ closingModal.addEventListener("click",
 // Add an event listener to maximizeModal
 maximizeModal.addEventListener("click",
     () => {
-        if(!modal.classList.contains("maximize"))
+        if(!modal.classList.contains("maximize")) {
+            // Add the class to maximize the modal
             modal.classList.add("maximize");
-        else
+
+            // Insert the display class in the disMaximize icon
+            disMaximizeModal.style.display = "inline";
+        }
+        else{
+            // Remove the maximize class
             modal.classList.remove("maximize");
+
+            // Insert the display class in the disMaximize icon
+            disMaximizeModal.style.display = "none";
+        }
+            
     }
 )

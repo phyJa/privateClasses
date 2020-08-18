@@ -208,6 +208,11 @@ h2 {
     font-weight: 700;
 }
 
+#disMaximizeModal {
+    color: yellow;
+    display: none;
+}
+
 .modal {
     position: relative;
     width: 90%;
