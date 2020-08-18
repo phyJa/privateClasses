@@ -37,6 +37,9 @@ closingModal.addEventListener("click",
 
         // Add the source attribute as empty
         iframe.setAttribute("src", "");
+
+        //Remove the maxmimized class
+        modal.classList.remove("maximize");
     }
 )
 

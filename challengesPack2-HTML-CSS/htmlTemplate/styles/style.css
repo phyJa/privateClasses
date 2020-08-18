@@ -236,3 +236,56 @@ h2 {
     display: none;
 }
 
+/*==== Resposivity ====*/
+@media(max-width: 1150px) {
+    .coursesContainer {
+        margin: 0px 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+    }
+}
+
+@media(max-width: 565px) {
+    .links {
+        margin: 0px 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px 5px;
+    }
+
+    .links a {
+        flex: 1;
+        margin: 0;
+        border-bottom: 2px solid rgb(54, 41, 56);
+    }
+    
+    h2 {
+        font-size: 16px;
+        width: 80%;
+        margin: 30px auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .course img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 14px;
+        height: 100px;
+    }
+
+    .courseInformation {
+        padding:50px;
+    }
+
+    .courseInformation li span {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
