@@ -245,9 +245,18 @@ h2 {
         gap: 30px;
         padding: 20px;
     }
+
+    #closeModal {
+        top: 1%;
+    }
+    
+    #maximizeModal {
+        top: 1%;
+        right: 15%;
+    }
 }
 
-@media(max-width: 565px) {
+@media(max-width: 580px) {
     .links {
         margin: 0px 30px;
         display: grid;
