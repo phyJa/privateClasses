@@ -1,8 +1,14 @@
 // Capture the modalOverlay in a variable
 const modalOverlay = document.querySelector(".modalOverlay");
 
+// Select the modal
+const modal = modalOverlay.querySelector(".modal");
+
 // Add the close modal element in variable
 const closingModal = modalOverlay.querySelector("#closeModal");
+
+// Add the maximizeModal icon into a variable
+const maximizeModal = modalOverlay.querySelector("#maximizeModal");
 
 // Get the iframe too
 const iframe = modalOverlay.querySelector("iframe");
@@ -31,5 +37,15 @@ closingModal.addEventListener("click",
 
         // Add the source attribute as empty
         iframe.setAttribute("src", "");
+    }
+)
+
+// Add an event listener to maximizeModal
+maximizeModal.addEventListener("click",
+    () => {
+        if(!modal.classList.contains("maximize"))
+            modal.classList.add("maximize");
+        else
+            modal.classList.remove("maximize");
     }
 )
