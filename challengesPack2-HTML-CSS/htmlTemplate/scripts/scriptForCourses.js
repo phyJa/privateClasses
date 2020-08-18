@@ -46,6 +46,9 @@ closingModal.addEventListener("click",
 
         // Take the maximizeModal element and display it again
         maximizeModal.style.display = "inline";
+
+        // Take the disMaximizeModal element and remove it from display
+        disMaximizeModal.style.display = "none";
     }
 )
 
@@ -62,13 +65,19 @@ maximizeModal.addEventListener("click",
             // Take the maximizeModal element and remove it from the display
             maximizeModal.style.display = "none";
         }
-        else{
-            // Remove the maximize class
-            modal.classList.remove("maximize");
 
-            // Insert the display class in the disMaximize icon
-            disMaximizeModal.style.display = "none";
-        }
+        disMaximizeModal.addEventListener("click",
+            () => {
+                // Remove the maximize class
+                modal.classList.remove("maximize");
+
+                // Insert the display class in the disMaximize icon
+                disMaximizeModal.style.display = "none";
+
+                // Take the maximizeModal element and display it again
+                maximizeModal.style.display = "inline";
+            }
+        )
             
     }
 )

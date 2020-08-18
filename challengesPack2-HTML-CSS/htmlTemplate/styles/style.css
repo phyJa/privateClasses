@@ -210,6 +210,10 @@ h2 {
 
 #disMaximizeModal {
     color: yellow;
+    position: absolute;
+    top: 3%;
+    right: 6%;
+    cursor: pointer;
     display: none;
 }
 
