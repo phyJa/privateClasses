@@ -2,7 +2,7 @@
 
 :root {
     --color-theme: rgb(31, 7, 34);
-    --color-links: rgb(75, 112, 146); 
+    --color-links: rgb(108, 75, 146); 
 }
 
 * {
@@ -27,11 +27,15 @@ body {
     color: white;
     text-decoration: none;
     margin: 0 30px;
+    border: 2px solid rgba(7, 1, 1, 0.596);
+    border-radius: 8px;
+    padding: 5px 10px;
 }
 
 .links a:hover {
     color: var(--color-links);
-    transition: color 400ms;
+    transition: 400ms;
+    border-color: var(--color-links);
 }
 
 .logoContainer {
