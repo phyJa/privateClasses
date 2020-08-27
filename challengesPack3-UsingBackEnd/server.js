@@ -1,8 +1,23 @@
 // Call express through node.js
 const express = require("express");
 
+// Call nunjucks
+const nunjucks = require("nunjucks");
+
 // Create the server
 const server = express();
+
+// Server configuration
+server.set("view engine", "html");
+
+// Nunjucks configuration
+nunjucks.configure(
+    "views",
+    {
+        express: server
+    }
+);
+
 
 // Adding a route
 server.get(
