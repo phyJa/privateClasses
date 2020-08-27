@@ -8,7 +8,7 @@ const server = express();
 server.get(
     "/",
     (req, res) => {
-        return res.send("Hello!!");
+        return res.send("Hello, there!!");
     }
 );
 
