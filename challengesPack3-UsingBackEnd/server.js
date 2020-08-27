@@ -4,10 +4,19 @@ const express = require("express");
 // Create the server
 const server = express();
 
+// Adding a route
+server.get(
+    "/",
+    (req, res) => {
+        return res.send("Hello!!");
+    }
+);
+
+
 // Test the server
 server.listen(
-    5000,
+    4000,
     () => {
         console.log("Server is running!");
     }
-)
+);
