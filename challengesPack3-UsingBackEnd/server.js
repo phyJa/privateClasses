@@ -30,6 +30,22 @@ server.get(
     }
 );
 
+// Courses page
+server.get(
+    "/courses",
+    (req, res) => {
+        return res.render("courses");
+    }
+);
+
+// About page
+server.get(
+    "/about",
+    function(req, res) {
+        return res.render("about");
+    }
+);
+
 
 // Test the server
 server.listen(
