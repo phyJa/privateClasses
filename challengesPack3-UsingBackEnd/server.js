@@ -10,6 +10,9 @@ const server = express();
 // Server configuration
 server.set("view engine", "html");
 
+// Serve the view files with the ones in the public folder
+server.use(express.static("public"));
+
 // Nunjucks configuration
 nunjucks.configure(
     "views",
