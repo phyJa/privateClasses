@@ -23,7 +23,7 @@ nunjucks.configure(
 server.get(
     "/",
     (req, res) => {
-        return res.send("Hello, there!!");
+        return res.render("headerTemplate");
     }
 );
 
