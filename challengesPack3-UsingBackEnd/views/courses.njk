@@ -1,86 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title> Courses </title>
+{% extends "layout.njk" %}
 
-        <link rel="stylesheet" href="style.css" />
-        
-        <!-- Icons -->
-        <link 
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet" 
-        />
-    </head>
-    <body>
-        <header class="links">
-            <a href="/"> Home </a>
-            <a href="https://discordapp.com/invite/gCRAFhc"> Community </a>
-            <a href="mailto:oi@rocketseat.com.br">Email</a>
-            <a href="/about">About</a>
-            <a href="tel:+5547992078767">Phone</a>
-        </header>
+{% block title %}
+    <title> Courses </title>
+{% endblock title %}
 
-        <h2> These are the available courses from Rocketseat </h2>
+{% block links %}
+    <a href="/about">About</a>
+    <a href="tel:+5547992078767">Phone</a>
+    <a href="/"> Home </a>
+{% endblock links %}
 
-        <div class="coursesContainer">
-            <div class="course" id="starter">
-                <img 
-                    src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/starter.svg" 
-                    alt="Starter Logo" 
-                />
+{% block content %}
+    <h2> These are the available courses from Rocketseat </h2>
 
-                <h3> A start in your career with the free courses </h3>
+    <div class="coursesContainer">
+        <div class="course" id="starter">
+            <img 
+                src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/starter.svg" 
+                alt="Starter Logo" 
+            />
 
-                <ul class="courseInformation">
-                    <li> <span>  7 modules </span> </li>
-                    <li> <span class="free">Free</span> </li>
-                </ul>
-            </div>
+            <h3> A start in your career with the free courses </h3>
 
-            <div class="course" id="launchbase">
-                <img 
-                    src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/launchbase.svg" 
-                    alt="LaunchBase Logo" 
-                />
-
-                <h3> Become a great programmer with the fundamental concepts </h3>
-
-
-                <ul class="courseInformation">
-                    <li> <span>  8 modules </span> </li>
-                    <li> <span class="paid">Paid</span> </li>
-                </ul>
-            </div>
-
-            <div class="course" id="gostack">
-                <img 
-                    src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/gostack.svg" 
-                    alt="GoStack Logo" 
-                />
-
-                <h3> Be the best by learning the most powerful techonologies of the Web </h3>
-
-                <ul class="courseInformation">
-                    <li> <span>  7 modules </span> </li> 
-                    <hr />
-                    <li> <span class="paid">Paid</span> </li>
-                </ul>
-            </div>
+            <ul class="courseInformation">
+                <li> <span>  7 modules </span> </li>
+                <li> <span class="free">Free</span> </li>
+            </ul>
         </div>
 
-        <div class="modalOverlay notDisplay">
-            <div class="modal">
-                <span id="disMaximizeModal" class="material-icons" title="Reduce size">select_all</span>
-                <span id="maximizeModal" class="material-icons" title="Increase size">aspect_ratio</span>
-                <span id="closeModal" class="material-icons" title="Close">cancel</span>
-                <iframe src="" frameborder="0"></iframe>
-            </div>
+        <div class="course" id="launchbase">
+            <img 
+                src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/launchbase.svg" 
+                alt="LaunchBase Logo" 
+            />
+
+            <h3> Become a great programmer with the fundamental concepts </h3>
+
+
+            <ul class="courseInformation">
+                <li> <span>  8 modules </span> </li>
+                <li> <span class="paid">Paid</span> </li>
+            </ul>
         </div>
 
-        <script src="scriptForCourses.js"></script>
-    </body>
-</html>
+        <div class="course" id="gostack">
+            <img 
+                src="https://storage.googleapis.com/golden-wind/bootcamp-launchbase/assets/gostack.svg" 
+                alt="GoStack Logo" 
+            />
+
+            <h3> Be the best by learning the most powerful techonologies of the Web </h3>
+
+            <ul class="courseInformation">
+                <li> <span>  7 modules </span> </li> 
+                <hr />
+                <li> <span class="paid">Paid</span> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modalOverlay notDisplay">
+        <div class="modal">
+            <span id="disMaximizeModal" class="material-icons" title="Reduce size">select_all</span>
+            <span id="maximizeModal" class="material-icons" title="Increase size">aspect_ratio</span>
+            <span id="closeModal" class="material-icons" title="Close">cancel</span>
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <script src="scriptForCourses.js"></script>
+{% endblock content %}
