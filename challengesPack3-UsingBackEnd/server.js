@@ -8,7 +8,7 @@ const nunjucks = require("nunjucks");
 const server = express();
 
 // Server configuration
-server.set("view engine", "html");
+server.set("view engine", "njk");
 
 // Serve the view files with the ones in the public folder
 server.use(express.static("public"));
