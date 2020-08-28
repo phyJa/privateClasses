@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Favicon -->
+        
+        <link rel="shortcut icon" href="favicon_io/favicon.ico" type="image/x-icon">
+        
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+        
+        {% block title %}
+            <title> Rocketseat </title>
+        {% endblock %}
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header class="links">
+            <a href="https://discordapp.com/invite/gCRAFhc" target="_blank"> Community </a>
+
+            <a href="mailto:oi@rocketseat.com.br">Email</a>
+            
+            <a href="tel:+5547992078767">Phone</a> 
+            
+            {% block links %}
+                <a href="/about">About</a>
+
+                <a href="/courses">Content</a>
+            {% endblock links %}
+        
+        </header> 
+
+        {% block content %}
+        {% endblock%}
+    </body>
+</html>
