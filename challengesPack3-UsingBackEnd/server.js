@@ -26,14 +26,6 @@ nunjucks.configure(
 server.get(
     "/",
     (req, res) => {
-        return res.render("headerTemplate");
-    }
-);
-
-// Courses page
-server.get(
-    "/courses",
-    (req, res) => {
         return res.render("courses");
     }
 );
