@@ -38,6 +38,13 @@ server.get(
     }
 );
 
+// Not-found page
+server.use(
+    function(req, res) {
+        res.status(404).render("notFound");
+    }
+);
+
 
 // Test the server
 server.listen(

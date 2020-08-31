@@ -250,6 +250,21 @@ h2 {
     display: none;
 }
 
+.notFound {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+}
+.notFound a {
+    margin: 0 6px; 
+    color: white
+}
+
+.notFound a:hover {
+    color: var(--color-links);
+}
 /*==== Resposivity ====*/
 @media(max-width: 1150px) {
     .coursesContainer {
