@@ -4,6 +4,9 @@ const express = require("express");
 // Call nunjucks
 const nunjucks = require("nunjucks");
 
+// Call the data
+const coursesInformation = require("./data/coursesData");
+
 // Create the server
 const server = express();
 
@@ -26,7 +29,12 @@ nunjucks.configure(
 server.get(
     "/",
     (req, res) => {
-        return res.render("courses");
+        return res.render(
+            "courses",
+            {
+                data: coursesInformation
+            }
+        );
     }
 );
 
