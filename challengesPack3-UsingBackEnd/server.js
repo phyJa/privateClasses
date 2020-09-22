@@ -48,9 +48,11 @@ server.get(
 
 // Video page
 server.get(
-    "/video",
+    "/description/:id",
     (req, res) => {
-        res.render("video");
+        const reqId = req.params.id;
+
+        res.send(`reqId is ${reqId}`);
     }
 );
 
