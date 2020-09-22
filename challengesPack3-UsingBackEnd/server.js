@@ -46,6 +46,14 @@ server.get(
     }
 );
 
+// Video page
+server.get(
+    "/video",
+    (req, res) => {
+        res.render("video");
+    }
+);
+
 // Not-found page
 server.use(
     function(req, res) {
