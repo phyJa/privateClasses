@@ -3,3 +3,11 @@
 {% block title %}
     <title> Course description </title>
 {% endblock title %}
+
+{% block content %}
+    <div class="courseSpecification">
+        <div class="courseLogoContainer">
+            <img src="{{courseData.imgSrc}}" alt="Logo of {{courseData.courseId}}">
+        </div>
+    </div>
+{% endblock content %}
