@@ -48,11 +48,26 @@ server.get(
 
 // Video page
 server.get(
-    "/description/:id",
+    "/:id",
     (req, res) => {
         const reqId = req.params.id;
+        
+        // Match the right course from the data:
+        const theCourse = coursesInformation.find(
+            (aCourse) => { return aCourse.courseId === reqId}
+        );
 
-        res.send(`reqId is ${reqId}`);
+        // If there is no course
+        if (!theCourse) 
+            return res.send("Hmmm, course not found");
+        else{
+            return res.render(
+                "courseDescription", 
+                {
+                    courseData: theCourse
+                }
+            );
+        }        
     }
 );
 

@@ -123,7 +123,7 @@ h2 {
     text-align: center;
     border-radius: 6px;
     border: 2px solid rgb(37, 33, 47);
-    transition: 600ms;
+    transition: border 600ms, background-color 600ms;
     cursor: pointer;
 }
 
