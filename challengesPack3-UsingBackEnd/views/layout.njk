@@ -29,17 +29,24 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        
         {% block header %}
+
             <header class="links">
+
+                {% block links %}
+
+                    <a href="/about">About</a>
+
+                {% endblock links %}
+
                 <a href="https://discordapp.com/invite/gCRAFhc" target="_blank"> Community </a>
 
                 <a href="mailto:oi@rocketseat.com.br">Email</a>
                 
                 <a href="tel:+5547992078767">Phone</a> 
                 
-                {% block links %}
-                    <a href="/about">About</a>
-                {% endblock links %}
+                
             </header> 
         {% endblock header %}
 
