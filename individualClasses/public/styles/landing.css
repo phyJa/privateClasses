@@ -14,6 +14,12 @@
 
 }
 
+:root {
+
+    --main-color: rgb(61, 220, 241);
+
+}
+
 body {
 
     background-color: aqua;
@@ -22,7 +28,7 @@ body {
 
 header {
 
-    background-color: #eee;
+    background-color: white;
 
     padding: 30px;
 
@@ -38,7 +44,37 @@ header a {
 
     text-decoration: none;
 
-    color: rgb(78, 185, 199);
+    color: rgb(61, 220, 241);
+
+    font-size: 22px;
+
+    position: relative;
+
+}
+
+header a::after {
+
+    content: "";
+
+    bottom: -2px;
+
+    left: 0;
+
+    background-color: var(--main-color);
+
+    width: 0;
+
+    height: 2.4px;
+
+    position: absolute;
+
+    transition: width 500ms;
+
+}
+
+header a:hover::after {
+
+    width: 100%;
 
 }
 
