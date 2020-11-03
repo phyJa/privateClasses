@@ -15,7 +15,7 @@ nunjucks.configure(
     "pages",
 
     {
-        
+
         express: server,
 
         autoescape: false, // This is for nunjucks to recognize internal html tags in variables
@@ -34,4 +34,4 @@ server.get(
 
 );
 
-server.listen(3000, () => { console.log("Listening!" ); } );
+server.listen(4000, () => { console.log("Listening!" ); } );
