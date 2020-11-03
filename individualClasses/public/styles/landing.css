@@ -16,13 +16,13 @@
 
 :root {
 
-    --main-color: rgb(61, 220, 241);
+    --main-color: rgb(31, 174, 230);
 
 }
 
 body {
 
-    background-color: aqua;
+    background-color: var(--main-color);
 
 }
 
@@ -44,8 +44,8 @@ header a {
 
     text-decoration: none;
 
-    color: rgb(61, 220, 241);
-
+    color: var(--main-color);
+    
     font-size: 22px;
 
     position: relative;
