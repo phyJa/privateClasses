@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all -p browserSync nodemon",
-    "browserSync": "browser-sync start --proxy http://localhost:4000 'pages, public/styles, public/scripts'",
+    "browserSync": "browser-sync start --proxy http://localhost:4000 --files 'pages, public'",
     "nodemon": "nodemon server.js"
   },
   "keywords": [],
