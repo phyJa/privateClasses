@@ -18,6 +18,8 @@
 
     --main-color: rgb(31, 174, 230);
 
+    --titles-color: rgb(110, 82, 82);
+
 }
 
 body {
@@ -111,6 +113,73 @@ header a + a {
 
     width: 100%;
 
-    height: 100%;
+}
+
+.card .dataContainer {
+
+    padding: 30px;
+
+}
+
+.card .dataContainer div div:first-child  {
+
+    border-top: 2px solid rgba(0, 255, 255, 0.3);
+
+    margin: 2px 0;
+
+
+}
+
+.card .dataContainer .name div:first-child {
+
+    border: none;
+
+}
+
+.card .dataContainer div div:nth-child(1) span {
+
+    color: rgba(25, 65, 25, 0.5);
+
+    font-size: 15px;
+
+    line-height: 25px;
+
+}
+
+.card .dataContainer div div:nth-child(2) {
+
+    margin-bottom: 5px;
+
+}
+
+.card .dataContainer .classType div:nth-child(2) span,
+.card .dataContainer .subjects div:nth-child(2) span {
+    
+    color: var(--titles-color);
+
+    display: inline-block;
+
+    border-radius: 16px;
+
+    padding: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    font-size: 14px;
+
+
+}
+
+.card .dataContainer .classType div:nth-child(2) span {
+
+    background-color: rgb(102, 255, 0);
+
+}
+
+.card .dataContainer .subjects div:nth-child(2) span {
+
+    background-color: rgb(42, 212, 212);
 
 }
