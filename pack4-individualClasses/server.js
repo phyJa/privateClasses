@@ -4,6 +4,8 @@ const nunjucks = require("nunjucks");
 
 const server = express();
 
+const routes = require("./routes");
+
 // Settings
 
 server.set("view engine", "njk");
@@ -26,12 +28,6 @@ nunjucks.configure(
 
 );
 
-server.get(
-    
-    "/",
-
-    (request, response) => { return response.render("landing"); }
-
-);
+server.use(routes);
 
 server.listen(4000, () => { console.log("Listening!" ); } );
