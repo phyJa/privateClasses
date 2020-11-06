@@ -20,6 +20,8 @@
 
     --titles-color: rgb(110, 82, 82);
 
+    --card-border-radius: 18px;
+
 }
 
 body {
@@ -99,19 +101,18 @@ header a + a {
     display: grid;
 
     grid-template-columns: 40% 60%;
+    
+    border-radius: var(--card-border-radius);
+
+    box-shadow: greenyellow 0px 5px 20px;
 
 }
 
 .card .imageContainer {
     
-    height: 100%;
+    border-radius: var(--card-border-radius) 0 0 var(--card-border-radius);
 
-}
-
-
-.card .imageContainer img {
-
-    width: 100%;
+    background: url("https://source.unsplash.com/collection/9564215") no-repeat center center / cover;
 
 }
 
