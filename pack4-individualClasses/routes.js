@@ -1,18 +1,9 @@
 const express = require("express");
-
 const routes = express.Router();
+// Functions to render pages
+const renderPages = require("./functions/renderPages");
 
-routes.get(
-    "/",
-    function (request, response) {
-        return response.render("landing"); 
-    }
-);
-routes.get(
-    "/teachers/create", 
-    function (request, response) {
-        return response.render("teachers/create");
-    }
-);
+routes.get("/", renderPages.renderLanding);
+routes.get("/teachers/create", renderPages.renderCreate);
 
 module.exports = routes;
