@@ -2,18 +2,13 @@
 <html lang="en">
 
     <head>
-
         <meta charset="UTF-8">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <link rel="stylesheet" href="/styles/landing.css" />
-
         <title>
             {% block pageTitle %}
             {% endblock pageTitle %}
         </title>
-
     </head>
     
     <body>
@@ -26,7 +21,8 @@
             
         </header>
 
-        <div class="card">
+        {% block content %}
+            <div class="card">
 
             <div class="imageContainer">
 
@@ -139,6 +135,9 @@
             </div>
 
         </div>
+        {% endblock content %}
+
+        
     
     </body>
 
