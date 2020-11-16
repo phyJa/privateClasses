@@ -206,7 +206,8 @@ header a + a {
     background-color: aquamarine;
 }
 
-.card .dataContainer .classType .data span {
+.card .dataContainer .classType .data span.classroom,
+.card .dataContainer .classType .data span.online {
     width: 40%;
 } 
 
@@ -214,6 +215,23 @@ header a + a {
     display: flex;
     align-items: center;
     border-top: none;
+}
+
+.card .dataContainer .buttonContainer button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 20px;
+    outline: none;
+    transition: background-color 400ms;
+}
+
+.card .dataContainer .buttonContainer button:hover {
+    background-color: aquamarine;
+}
+
+.card .dataContainer .buttonContainer button:active {
+    background-color: rgb(43, 165, 83);
 }
 
 /* ==== Animation ==== */
