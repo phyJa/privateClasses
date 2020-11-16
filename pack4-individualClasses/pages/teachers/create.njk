@@ -1,44 +1,31 @@
 {% extends "cardLayout.njk" %}
 
 {% block content %}
-    <div class="card">
+    <form class="card" method="POST" action="/teachers/create">
         <div class="imageContainer">
             {#  Image goes here by CSS #}    
         </div>
         <div class="dataContainer">
-
             <div class="name">
-
                 <div class="title"> 
-
                     <span> Teacher name </span> 
-
                 </div>
-
                 <div class="data">
-
-                    <span> Teacher name </span>
-
+                    <input 
+                        name="name" 
+                        type="text" 
+                        placeholder="Type the name of the teacher" 
+                    />
                 </div>
-
             </div>
-
-            <div class="age">
-
+            <div class="birth">
                 <div class="title"> 
-                    
-                    <span> Teacher age </span> 
-
+                    <span> Birth date: </span> 
                 </div>
-
                 <div class="data">
-
-                    <span> Age </span>
-
+                    <input type="date" name="birth"/> 
                 </div>
-
             </div>
-
             <div class="studyLevel">
 
                 <div class="title"> 
@@ -108,5 +95,5 @@
             </div>
 
         </div>
-    </div>
+    </form>
 {% endblock content %}
