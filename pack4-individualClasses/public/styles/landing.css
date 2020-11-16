@@ -192,6 +192,29 @@ header a + a {
 
 }
 
+/* ==== Inputs ==== */
+.card .dataContainer input,
+.card .dataContainer select {
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    border-radius: 6px;
+    transition: background-color 400ms;
+}
+
+.card .dataContainer input:focus {
+    background-color: aquamarine;
+}
+
+.card .dataContainer .classType .data span {
+    width: 40%;
+} 
+
+.card .dataContainer .classType .data span div {
+    display: flex;
+    align-items: center;
+    border-top: none;
+}
 
 /* ==== Animation ==== */
 @keyframes appearing {
