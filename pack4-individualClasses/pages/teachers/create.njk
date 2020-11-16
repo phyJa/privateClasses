@@ -26,6 +26,18 @@
                     <input type="date" name="birth"/> 
                 </div>
             </div>
+            <div class="avatar_url">
+                <div class="title">
+                    <span> URL to the teacher avatar </span>
+                </div>
+                <div class="data">
+                    <input 
+                        type="url" 
+                        name="avatar_url" 
+                        placeholder="Type the URL here..." 
+                    />
+                </div>
+            </div>
             <div class="studyLevel">
                 <div class="title"> 
                     <span> Level of studies </span> 
@@ -57,43 +69,19 @@
                         <input type="radio" name="classType" value="online" /> Online course
                     </span>
                 </div>
-
             </div>
-
             <div class="subjects">
-
-                <div class="title"> 
-                    
+                <div class="title">        
                     <span> Subjects </span> 
-
                 </div>
-
                 <div class="data">
-
-                    <span> Math </span>
-
-                    <span> Physics </span>
-
+                    <input 
+                        type="text" 
+                        name="subjects" 
+                        placeholder="Type here the subjects and separate them by comma"
+                    />
                 </div>
-
             </div>
-
-            <div class="since">
-
-                <div class="title"> 
-                    
-                    <span> Since </span> 
-
-                </div>
-
-                <div class="data">
-
-                    <span>ajsfhdsaiofhudasjofhasoduiufhsoi </span>
-
-                </div>
-
-            </div>
-
         </div>
     </form>
 {% endblock content %}
