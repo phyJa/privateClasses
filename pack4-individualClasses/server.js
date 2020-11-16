@@ -11,6 +11,8 @@ const routes = require("./routes");
 server.set("view engine", "njk");
 
 server.use(express.static("public"));
+// Enable POST visualization
+server.use(express.urlencoded({extended: true}));
 
 nunjucks.configure(
 
