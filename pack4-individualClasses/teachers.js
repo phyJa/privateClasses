@@ -1,5 +1,6 @@
 // Requires
 const fs = require("fs");
+const finalData = require("./data.json");
 // Exports
 exports.validateAndWriteData = function(request, response) {
     // Validation
@@ -9,7 +10,17 @@ exports.validateAndWriteData = function(request, response) {
         if(data[aDataKey] === "")
             return response.status(400).send("Please, fill all the fields");
     }
+    data.id = Number(finalData.length) + 1;
     // Write
-    // If everything goes fine
-    return response.send(dataKeys);
+    finalData.push(data);
+    fs.writeFile(
+        "./data.json", 
+        JSON.stringify(finalData, null, 2), 
+        function (error) {
+            if(error)
+                return response.send(error);
+            else
+                return response.redirect("/");
+        }
+    );
 }
