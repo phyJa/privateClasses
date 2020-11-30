@@ -21,4 +21,5 @@ nunjucks.configure(
 );
 server.use(routes);
 // Listen
-server.listen(4000, () => { console.log("Listening!" ); } );
+const port = 4000;
+server.listen(port, () => { console.log(`Listening on port ${port}!` ); } );

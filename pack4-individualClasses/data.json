@@ -16,5 +16,30 @@
     "classType": "face-to-face",
     "subjects": "Gym, Crossfit",
     "id": 2
+  },
+  {
+    "name": "Joseph",
+    "birth": "1990-02-22",
+    "avatar_url": "http://www.jo.com",
+    "studyLevel": "master",
+    "classType": "online",
+    "subjects": "Mathematics",
+    "id": 3
+  },
+  {
+    "name": "Josh",
+    "birth": "1990-09-09",
+    "avatar_url": "http://googlec.com",
+    "classType": "face-to-face",
+    "subjects": "Math",
+    "id": 4
+  },
+  {
+    "name": "sad",
+    "birth": "2111-12-22",
+    "avatar_url": "http://asda.com",
+    "classType": "face-to-face",
+    "subjects": "asd",
+    "id": 5
   }
 ]

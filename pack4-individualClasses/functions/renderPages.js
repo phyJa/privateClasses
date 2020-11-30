@@ -5,5 +5,9 @@ module.exports = {
 
     renderCreate(request, response ) {
         return response.render("teachers/create");
+    },
+
+    showTeacher(request, response) {
+        return response.render("teachers/show");
     }
 }
