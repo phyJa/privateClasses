@@ -12,7 +12,26 @@ module.exports = {
     },
 
     showTeacher(request, response) {
-        return response.render("teachers/show");
+        // Find the teacher
+        const { id } = request.params;
+        const findTeacher = finalData.find(
+            function(anInstructor) {
+                return (Number(id) === anInstructor.id);
+            }
+        );
+        if(!findTeacher)
+            return response.status(404).send("Teacher not found....");
+        // Adjusts
+        const teacher = {
+            ...findTeacher,
+            classType: findTeacher.classType.split(","),
+            subjects: findTeacher.subjects.split(","),
+        };
+        // Render the page
+        return response.render(
+            "teachers/show",
+            { teacher }
+        );
     },
 
     validateAndWriteData(request, response) {
@@ -24,6 +43,7 @@ module.exports = {
                 return response.status(400).send("Please, fill all the fields");
         }
         data.id = Number(finalData.length) + 1;
+        data.since = Date.now();
         // Write
         finalData.push(data);
         fs.writeFile(

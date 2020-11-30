@@ -1,1 +1,61 @@
 {% extends "cardLayout.njk" %}
+
+{% block content %}
+    <div class="card">
+        <div class="imageContainer" style="background: url( {{ teacher.avatar_url }} ) no-repeat center center / cover">
+            {#  Image goes here by CSS #}
+        </div>
+        <div class="dataContainer">
+            <div class="name">
+                <div class="title"> 
+                    <span> Teacher name </span> 
+                </div>
+                <div class="data">
+                    <span> {{ teacher.name }} </span>
+                </div>
+            </div>
+            <div class="age">
+                <div class="title"> 
+                    <span> Teacher age </span> 
+                </div>
+                <div class="data">
+                    <span> {{ teacher.age }} </span>
+                </div>
+            </div>
+            <div class="studyLevel">
+                <div class="title"> 
+                    <span> Level of studies </span> 
+                </div>
+                <div class="data">
+                    <span> {{ teacher.studyLevel }} </span>
+                </div>
+            </div>
+            <div class="classType">
+                <div class="title"> 
+                    <span> Type of classes </span> 
+                </div> 
+                <div class="data">
+                    <span> {{ teacher.classType }} </span>
+                </div>
+            </div>
+            <div class="subjects">
+                <div class="title"> 
+                    <span> Subjects </span> 
+                </div>
+                <div class="data">
+                    {% for subject in teacher.subjects %}
+                        <span> {{ subject }} </span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="since">
+                <div class="title"> 
+                    <span> Since </span> 
+                </div>
+                <div class="data">
+                    <span> {{ teacher.since }} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
