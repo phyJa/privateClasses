@@ -41,5 +41,23 @@
     "classType": "face-to-face",
     "subjects": "asd",
     "id": 5
+  },
+  {
+    "name": "John",
+    "birth": "1990-11-22",
+    "avatar_url": "https://jj.com",
+    "studyLevel": "master",
+    "classType": "face-to-face",
+    "subjects": "Gym",
+    "id": 6
+  },
+  {
+    "name": "John Will",
+    "birth": "1990-11-22",
+    "avatar_url": "https://jj.com",
+    "studyLevel": "master",
+    "classType": "face-to-face",
+    "subjects": "Gym",
+    "id": 7
   }
 ]

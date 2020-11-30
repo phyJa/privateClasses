@@ -2,12 +2,11 @@
 const express = require("express");
 const routes = express.Router();
 // Functions to render pages
-const renderPages = require("./functions/renderPages");
-// Functions to validate and write data
-const validateAndWrite = require("./teachers");
+const mainFunctions = require("./functions/mainFunctions");
 // Routes
-routes.get("/", renderPages.renderLanding);
-routes.get("/teachers/create", renderPages.renderCreate);
-routes.post("/teachers/create", validateAndWrite.validateAndWriteData);
+routes.get("/", mainFunctions.renderLanding);
+routes.get("/teachers/create", mainFunctions.renderCreate);
+routes.get("/teachers/show", mainFunctions.showTeacher);
+routes.post("/teachers/create", mainFunctions.validateAndWriteData);
 // Export
 module.exports = routes;
