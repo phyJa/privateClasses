@@ -1,6 +1,7 @@
 // Requires
 const fs = require("fs");
 const finalData = require("../data.json");
+const { age } = require("./utils");
 
 module.exports = {
     renderLanding(request, response) {
@@ -24,7 +25,7 @@ module.exports = {
         // Adjusts
         const teacher = {
             ...findTeacher,
-            classType: findTeacher.classType.split(","),
+            age: age(findTeacher.birth),
             subjects: findTeacher.subjects.split(","),
         };
         // Render the page

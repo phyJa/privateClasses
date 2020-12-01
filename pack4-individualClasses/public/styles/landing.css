@@ -183,12 +183,14 @@ header a + a {
 .card .dataContainer .classType div:nth-child(2) span {
 
     background-color: rgb(102, 255, 0);
+    margin-bottom: 5px;
 
 }
 
 .card .dataContainer .subjects div:nth-child(2) span {
 
     background-color: rgb(42, 212, 212);
+    margin-bottom: 5px;
 
 }
 
