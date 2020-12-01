@@ -1,7 +1,7 @@
 // Requires
 const fs = require("fs");
 const finalData = require("../data.json");
-const { age } = require("./utils");
+const { age, date } = require("./utils");
 
 module.exports = {
     renderLanding(request, response) {
@@ -26,6 +26,7 @@ module.exports = {
         const teacher = {
             ...findTeacher,
             age: age(findTeacher.birth),
+            since: date(findTeacher.since),
             subjects: findTeacher.subjects.split(","),
         };
         // Render the page

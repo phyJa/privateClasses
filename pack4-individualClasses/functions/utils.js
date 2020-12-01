@@ -16,3 +16,15 @@ exports.age = function (dateString) {
     else
         return (age - 1);
 }
+
+exports.date = function(currentTimestamp) {
+    // Define
+    const now = new Date(currentTimestamp);
+    const nowData = {
+        year: now.getUTCFullYear(),
+        month: `0${now.getUTCMonth() + 1}`.slice(-2),
+        day: `0${now.getUTCDate()}`.slice(-2)
+    }
+    // Return
+    return (`${nowData.year}-${nowData.month}-${nowData.day}`);
+}
