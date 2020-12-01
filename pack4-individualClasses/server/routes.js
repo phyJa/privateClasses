@@ -7,7 +7,7 @@ const {
     renderCreate,
     showTeacher,
     validateAndWriteData
-} = require("./functions/mainFunctions");
+} = require("../functions/mainFunctions");
 // Routes
 routes.get("/", renderLanding);
 routes.get("/teachers/create", renderCreate);
