@@ -7,6 +7,7 @@
             name="name" 
             type="text" 
             placeholder="Type the name of the teacher"
+            value="{{ teacher.name }}"
         />
     </div>
 </div>
@@ -15,7 +16,11 @@
         <span> Birth date: </span> 
     </div>
     <div class="data">
-        <input type="date" name="birth"/> 
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ teacher.birth }}"
+        /> 
     </div>
 </div>
 <div class="avatar_url">
@@ -26,7 +31,8 @@
         <input 
             type="url" 
             name="avatar_url" 
-            placeholder="Type the URL here..." 
+            placeholder="Type the URL here..."
+            value="{{ teacher.avatar_url }}"
         />
     </div>
 </div>
@@ -37,10 +43,38 @@
     <div class="data">
         <select name="studyLevel">
             <option disabled selected> Choose an option </option>
-            <option value="highSchool"> High School </option>
-            <option value="undergraduate"> Undergraduate </option>
-            <option value="master"> Master </option>
-            <option value="doctorate"> Doctorate </option>
+            <option 
+                value="highSchool" 
+                {% if teacher.studyLevel == "highScholl" %}
+                    selected
+                {% endif %}
+            > 
+                High School 
+            </option>
+            <option 
+                value="undergraduate"
+                {% if teacher.studyLevel == "undergraduate" %}
+                    selected
+                {% endif %}
+            > 
+                Undergraduate 
+            </option>
+            <option 
+                value="master"
+                {% if teacher.studyLevel == "master" %}
+                    selected
+                {% endif %}
+            > 
+                Master 
+            </option>
+            <option 
+                value="doctorate"
+                {% if teacher.studyLevel == "doctorate" %}
+                    selected
+                {% endif %}
+            >
+                Doctorate 
+            </option>
         </select>
     </div>
 </div>
@@ -55,13 +89,22 @@
                 type="radio" 
                 name="classType" 
                 value="face-to-face" 
-                checked
+                {% if teacher.classType == "face-to-face" %}
+                    checked
+                {% endif %}
             /> Classroom course
             </div> 
         </span>
         <span class="online">
             <div class="">
-                <input type="radio" name="classType" value="online" /> Online course
+                <input 
+                    type="radio" 
+                    name="classType" 
+                    value="online"
+                    {% if teacher.classType == "online" %}
+                        checked
+                    {% endif %}
+                /> Online course
             </div>
         </span>
     </div>
@@ -75,6 +118,7 @@
             type="text" 
             name="subjects" 
             placeholder="Type here the subjects and separate them by comma"
+            value="{{ teacher.subjects }}"
         />
     </div>
 </div>

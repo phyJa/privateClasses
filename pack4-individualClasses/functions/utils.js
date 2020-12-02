@@ -1,3 +1,5 @@
+const finalData = require("../data.json");
+
 // dateString: yyyy-mm-dd
 exports.age = function (dateString) {
     // Define the timeStamps
@@ -27,4 +29,17 @@ exports.date = function(currentTimestamp) {
     }
     // Return
     return (`${nowData.year}-${nowData.month}-${nowData.day}`);
+}
+
+exports.findTeacher = function(request) {
+    const { id } = request.params;
+    const foundTeacher = finalData.find(
+        function(anInstructor) {
+            return (Number(id) === anInstructor.id);
+        }
+    );
+    if(!foundTeacher)
+        return false;
+    else
+        return foundTeacher;
 }
