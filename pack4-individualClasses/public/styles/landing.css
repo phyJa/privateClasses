@@ -130,6 +130,12 @@ header a + a {
 
 }
 
+.card .dataContainer .sectionName h2 {
+    text-align: center;
+    font-size: 22px;
+    color: dimgrey;
+}
+
 .card .dataContainer div div:first-child  {
 
     border-top: 2px solid rgba(0, 255, 255, 0.3);

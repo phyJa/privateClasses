@@ -12,6 +12,10 @@ module.exports = {
         return response.render("teachers/create");
     },
 
+    renderEdit(request, response) {
+        return response.render("teachers/edit");
+    },
+
     showTeacher(request, response) {
         // Find the teacher
         const { id } = request.params;
