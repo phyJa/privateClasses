@@ -43,3 +43,22 @@ exports.findTeacher = function(request) {
     else
         return foundTeacher;
 }
+
+exports.graduation = function(aString) {
+    switch (aString) {
+        case "highSchool":
+            return "Complete High School level";
+
+        case "undergraduate":
+            return "Complete Undergraduate level";
+
+        case "master":
+            return "Master degree";
+
+        case "doctorate":
+            return "Doctorate degree";
+    
+        default:
+            return "No study level registered";
+    }
+}

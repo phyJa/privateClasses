@@ -28,5 +28,15 @@
     "subjects": "Computer Science, Programming",
     "id": 3,
     "since": 1606916822082
+  },
+  {
+    "name": "Barbara Eva",
+    "birth": "1996-09-11",
+    "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+    "studyLevel": "undergraduate",
+    "classType": "face-to-face",
+    "subjects": "History",
+    "id": 4,
+    "since": 1606921401189
   }
 ]

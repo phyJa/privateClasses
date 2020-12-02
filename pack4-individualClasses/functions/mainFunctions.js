@@ -1,7 +1,12 @@
 // Requires
 const fs = require("fs");
 const finalData = require("../data.json");
-const { age, date, findTeacher } = require("./utils");
+const { 
+    age, 
+    date, 
+    findTeacher,
+    graduation
+} = require("./utils");
 
 module.exports = {
     renderLanding(request, response) {
@@ -17,8 +22,14 @@ module.exports = {
         const foundTeacher = findTeacher(request); 
         if(!foundTeacher)
             return response.status(404).send("Teacher not found....");
-        else
-            return response.render("teachers/edit", { teacher: foundTeacher });
+        else {
+            const teacher = {
+                ...foundTeacher,
+                since: date(foundTeacher.since)
+            };
+            return response.render("teachers/edit", { teacher });
+        }
+            
     },
 
     showTeacher(request, response) {
@@ -30,7 +41,8 @@ module.exports = {
         const teacher = {
             ...foundTeacher,
             age: age(foundTeacher.birth),
-            since: date(foundTeacher.since),
+            since: new Intl.DateTimeFormat("en-US").format(foundTeacher.since),
+            studyLevel: graduation(foundTeacher.studyLevel),
             subjects: foundTeacher.subjects.split(","),
         };
         // Render the page

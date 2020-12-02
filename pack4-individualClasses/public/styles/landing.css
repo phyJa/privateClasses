@@ -226,16 +226,27 @@ header a + a {
     border-top: none;
 }
 
-.card .dataContainer .buttonContainer button {
+.card .dataContainer .buttonContainer {
+    margin-top: 20px;
+}
+
+.card .dataContainer .buttonContainer button,
+.card .dataContainer .buttonContainer a {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
     margin-top: 20px;
     outline: none;
+    background-color: rgb(127, 209, 127);
     transition: background-color 400ms;
+    text-decoration: none;
+    color: black;
 }
 
-.card .dataContainer .buttonContainer button:hover {
+
+
+.card .dataContainer .buttonContainer button:hover,
+.card .dataContainer .buttonContainer a:hover {
     background-color: aquamarine;
 }
 
