@@ -237,10 +237,16 @@ header a + a {
     border-radius: 6px;
     margin-top: 20px;
     outline: none;
+    font-size: 16px;
     background-color: rgb(127, 209, 127);
     transition: background-color 400ms;
     text-decoration: none;
     color: black;
+}
+
+.card .dataContainer .buttonContainer a {
+    display: block;
+    text-align: center;
 }
 
 
