@@ -28,8 +28,11 @@ module.exports = {
                 since: date(foundTeacher.since)
             };
             return response.render("teachers/edit", { teacher });
-        }
-            
+        }     
+    },
+
+    editTeacher(request, response) {
+        
     },
 
     showTeacher(request, response) {
