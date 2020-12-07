@@ -35,7 +35,7 @@ exports.findTeacher = function(request) {
     const { id } = request.params;
     const foundTeacher = finalData.find(
         function(anInstructor) {
-            return (Number(id) === anInstructor.id);
+            return (Number(id) === Number(anInstructor.id));
         }
     );
     if(!foundTeacher)

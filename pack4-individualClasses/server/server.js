@@ -2,9 +2,11 @@ const express = require("express");
 
 const nunjucks = require("nunjucks");
 
-const server = express();
-
 const routes = require("./routes");
+
+const methodOverride = require("method-override");
+
+const server = express();
 
 // Settings
 server.set("view engine", "njk");
@@ -19,6 +21,7 @@ nunjucks.configure(
         noCache: true // Not use cache (a version which is saved in the computer).
     }
 );
+server.use(methodOverride("_method"));
 server.use(routes);
 // Listen
 const port = 4000;

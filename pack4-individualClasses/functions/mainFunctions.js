@@ -32,7 +32,43 @@ module.exports = {
     },
 
     editTeacher(request, response) {
-        
+        // Find the teacher
+        const { id } = request.body;
+        const foundTeacher = finalData.find(
+            function(anInstructor) {
+                return (Number(id) === Number(anInstructor.id));
+            }
+        );
+        if(!foundTeacher)
+            return response.status(404).send("Teacher not found....");
+        else {
+            const newData = request.body;
+            const teacher = {
+                ...foundTeacher,
+                ...newData
+            };
+            // Get the index
+            let teacherIndex = 0;
+            finalData.find(
+                function (aTeacher, theIndex) {
+                    if(Number(aTeacher.id) === Number(teacher.id)) {
+                        teacherIndex = theIndex;
+                        return true;
+                    }
+                }
+            );
+            // Save the new data in the array
+            finalData[teacherIndex] = teacher;
+            // Write the file
+            fs.writeFile(
+                "data.json",
+                JSON.stringify(finalData, null, 2),
+                function(error) {
+                    if(error) return response.send("Error writing file");
+                    else return response.redirect("/");
+                }
+            );
+        }
     },
 
     showTeacher(request, response) {

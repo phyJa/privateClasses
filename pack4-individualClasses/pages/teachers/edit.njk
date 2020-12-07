@@ -1,7 +1,7 @@
 {% extends "cardLayout.njk" %}
 
 {% block content %}
-    <form class="card" method="POST" action="/teachers/create">
+    <form class="card" method="POST" action="/teachers/edit/?_method=PUT">
         <div class="imageContainer">
             {#  Image goes here by CSS #}    
         </div>
@@ -11,5 +11,10 @@
             </div>
             {% include "teachers/fields.njk" %}
         </div>
+        <input 
+            type="hidden" 
+            name="id"
+            value="{{ teacher.id }}" 
+        />
     </form>
 {% endblock content %}
