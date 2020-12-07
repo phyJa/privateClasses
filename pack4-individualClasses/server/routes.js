@@ -9,7 +9,7 @@ const {
     renderEdit,
     showTeacher,
     validateAndWriteData
-} = require("../functions/mainFunctions");
+} = require("./functions/mainFunctions");
 // Routes
 // Render and show (GET)
 routes.get("/", renderLanding);

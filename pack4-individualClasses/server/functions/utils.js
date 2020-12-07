@@ -1,4 +1,4 @@
-const finalData = require("../data.json");
+const finalData = require("../../data.json");
 
 // dateString: yyyy-mm-dd
 exports.age = function (dateString) {

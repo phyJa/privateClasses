@@ -1,6 +1,6 @@
 // Requires
 const fs = require("fs");
-const finalData = require("../data.json");
+const finalData = require("../../data.json");
 const { 
     age, 
     date, 
