@@ -260,6 +260,18 @@ header a + a {
     background-color: rgb(43, 165, 83);
 }
 
+/* Delete button */
+#deleteButton {
+    margin-top: 10px;
+    background-color: rgb(241, 57, 57);
+    color: white;
+
+}
+
+#deleteButton:hover {
+    background-color: red;
+}
+
 /* ==== Animation ==== */
 @keyframes appearing {
 

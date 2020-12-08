@@ -7,6 +7,7 @@ const {
     renderLanding,
     renderCreate,
     renderEdit,
+    deleteTeacher,
     showTeacher,
     validateAndWriteData
 } = require("./functions/mainFunctions");
@@ -20,5 +21,7 @@ routes.get("/teachers/:id/edit", renderEdit);
 routes.post("/teachers/create", validateAndWriteData);
 // Modify (PUT)
 routes.put("/teachers/edit", editTeacher);
+//Delete (DELETE)
+routes.delete("/teachers/edit", deleteTeacher);
 // Export
 module.exports = routes;

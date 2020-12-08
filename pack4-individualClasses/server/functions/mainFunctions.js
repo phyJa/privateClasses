@@ -31,6 +31,10 @@ module.exports = {
         }     
     },
 
+    deleteTeacher(request, response) {
+        return response.send("Delete teacher function called");
+    },
+
     editTeacher(request, response) {
         // Find the teacher
         const { id } = request.body;
