@@ -32,7 +32,29 @@ module.exports = {
     },
 
     deleteTeacher(request, response) {
-        return response.send("Delete teacher function called");
+        // Get the the teacher id
+        const { id } = request.body;
+        // Create a new array excluding the selected teacher
+        const newTeachersSet = finalData.filter(
+            function(anInstructor) {
+                if (Number(id) === Number(anInstructor.id))
+                    return false;
+                 else 
+                    return true; 
+            }
+        );
+        // Write this new array in "data.json"
+        fs.writeFile(
+            "data.json",
+            JSON.stringify(newTeachersSet, null, 2),
+            function(error) {
+                if(error)
+                    return response.status(500).send("Error writing file");
+                else 
+                    return response.redirect("/");
+            }
+        );
+        
     },
 
     editTeacher(request, response) {
