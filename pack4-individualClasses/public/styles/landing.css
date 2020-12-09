@@ -125,9 +125,7 @@ header a + a {
 }
 
 .card .dataContainer {
-
     padding: 30px;
-
 }
 
 .card .dataContainer .sectionName h2 {
@@ -228,6 +226,9 @@ header a + a {
 
 .card .dataContainer .buttonContainer {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .card .dataContainer .buttonContainer button,
@@ -235,7 +236,6 @@ header a + a {
     width: 100%;
     padding: 10px;
     border-radius: 6px;
-    margin-top: 20px;
     outline: none;
     font-size: 16px;
     background-color: rgb(127, 209, 127);
@@ -262,10 +262,8 @@ header a + a {
 
 /* Delete button */
 #deleteButton {
-    margin-top: 10px;
     background-color: rgb(241, 57, 57);
     color: white;
-
 }
 
 #deleteButton:hover {

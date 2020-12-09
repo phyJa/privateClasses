@@ -91,7 +91,7 @@ module.exports = {
                 JSON.stringify(finalData, null, 2),
                 function(error) {
                     if(error) return response.send("Error writing file");
-                    else return response.redirect("/");
+                    else return response.redirect(`/teachers/${id}/show`);
                 }
             );
         }

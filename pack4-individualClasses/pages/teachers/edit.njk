@@ -11,19 +11,27 @@
                     <h2> Edit teacher data </h2>
                 </div>
                 {% include "teachers/fields.njk" %}
+                <div class="buttonContainer">
+                    <button type="submit"> Save new data </button>
+                    <button 
+                        type="submit" 
+                        id="deleteButton" 
+                        value="Delete teacher"
+                        form="deleteForm"
+                    > Delete teacher </button>
+                </div>
                 <input 
                     type="hidden" 
                     name="id"
                     value="{{ teacher.id }}" 
                 />
             </form>
-            <form method="POST" action="/teachers/edit/?_method=DELETE">
+            <form method="POST" id="deleteForm" action="/teachers/edit/?_method=DELETE">
                 <input 
                     type="hidden" 
                     name="id"
                     value="{{ teacher.id }}" 
                 />
-                <input id="deleteButton" type="submit" value="Delete teacher" />
             </form>
         </div>
     </div>
