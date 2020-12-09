@@ -69,6 +69,7 @@ module.exports = {
             return response.status(404).send("Teacher not found....");
         else {
             const newData = request.body;
+            newData.id = Number(id);
             const teacher = {
                 ...foundTeacher,
                 ...newData
