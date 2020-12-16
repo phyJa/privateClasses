@@ -118,7 +118,7 @@ module.exports = {
             age: age(foundTeacher.birth),
             since: new Intl.DateTimeFormat("en-US").format(foundTeacher.since),
             studyLevel: graduation(foundTeacher.studyLevel),
-            subjects: foundTeacher.subjects.split(","),
+            subjects: String(foundTeacher.subjects).split(","),
         };
         // Render the page
         return response.render(
