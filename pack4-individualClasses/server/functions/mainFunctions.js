@@ -10,7 +10,12 @@ const {
 
 module.exports = {
     renderLanding(request, response) {
-        return response.render("landing");
+        return response.render(
+            "landing",
+            {
+                teachers: finalData
+            }
+        );
     },
 
     renderCreate(request, response ) {

@@ -17,9 +17,8 @@
 :root {
 
     --main-color: rgb(31, 174, 230);
-
     --titles-color: rgb(110, 82, 82);
-
+    --main-hover-color: aquamarine;
     --card-border-radius: 18px;
 
 }
@@ -253,11 +252,68 @@ header a + a {
 
 .card .dataContainer .buttonContainer button:hover,
 .card .dataContainer .buttonContainer a:hover {
-    background-color: aquamarine;
+    background-color: var(--main-hover-color);
 }
 
 .card .dataContainer .buttonContainer button:active {
     background-color: rgb(43, 165, 83);
+}
+
+/* Table of teachers */
+.card.tableContainer {
+    display: block;
+    padding: 40px;
+    justify-content: center;
+}
+
+.card.tableContainer table {
+    width: 100%;
+}
+
+.card.tableContainer table tbody tr {
+    position: relative;
+}
+
+.card.tableContainer table thead th,
+.card.tableContainer table tbody td {
+    text-align: center;
+    padding: 16px;
+    border-bottom: 1px solid greenyellow;
+}
+
+.card.tableContainer table tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.tableContainer table tbody tr td:first-child span {
+    width: 45px;
+    height: 45px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px 3px greenyellow;
+    border: 2px solid white;
+}
+
+.card.tableContainer table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.card.tableContainer table tbody tr td a {
+    text-decoration: none;
+    background-color: greenyellow;
+    padding: 10px 18px;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: background-color 400ms;
+}
+
+.card.tableContainer table tbody tr td a:hover {
+    background-color: var(--main-hover-color);
 }
 
 /* Delete button */
