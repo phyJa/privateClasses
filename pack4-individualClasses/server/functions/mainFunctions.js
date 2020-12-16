@@ -10,10 +10,14 @@ const {
 
 module.exports = {
     renderLanding(request, response) {
+        let newTeacherData = [...finalData];
+        for(let aTeacher of newTeacherData) {
+            aTeacher.subjects = String(aTeacher.subjects).split(",");
+        }
         return response.render(
             "landing",
             {
-                teachers: finalData
+                teachers: newTeacherData
             }
         );
     },
