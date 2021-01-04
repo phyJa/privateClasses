@@ -6,7 +6,7 @@ const {
     date, 
     findTeacher,
     graduation
-} = require("./utils");
+} = require("../utils");
 
 module.exports = {
     renderLanding(request, response) {

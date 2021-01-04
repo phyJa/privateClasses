@@ -10,7 +10,7 @@ const {
     deleteTeacher,
     showTeacher,
     validateAndWriteData
-} = require("./functions/mainFunctions");
+} = require("./controllers/teachers");
 // Routes
 // Render and show (GET)
 routes.get("/", renderLanding);
