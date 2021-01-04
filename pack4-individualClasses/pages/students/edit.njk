@@ -1,0 +1,44 @@
+{% extends "cardLayout.njk" %}
+
+{% block content %}
+    <div class="card">
+        <div class="imageContainer">
+                {#  Image goes here by CSS #}    
+        </div>
+        <div class="dataContainer">
+            <form method="POST" action="/teachers/edit/?_method=PUT">
+                <div class="sectionName">
+                    <h2> Edit teacher data </h2>
+                </div>
+                {% include "teachers/fields.njk" %}
+                <div class="buttonContainer">
+                    <button type="submit"> Save new data </button>
+                    <button 
+                        type="submit" 
+                        id="deleteButton" 
+                        value="Delete teacher"
+                        form="deleteForm"
+                    > Delete teacher </button>
+                </div>
+                <input 
+                    type="hidden" 
+                    name="id"
+                    value="{{ teacher.id }}" 
+                />
+                <input 
+                    type="hidden" 
+                    id="avatar_url"
+                    value="{{ teacher.avatar_url }}" 
+                />
+            </form>
+            <form method="POST" id="deleteForm" action="/teachers/edit/?_method=DELETE">
+                <input 
+                    type="hidden" 
+                    name="id"
+                    value="{{ teacher.id }}" 
+                />
+            </form>
+        </div>
+    </div>
+    <script src="/scripts/showImage.js"></script>
+{% endblock content %}

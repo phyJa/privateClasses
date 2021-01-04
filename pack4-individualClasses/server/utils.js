@@ -44,6 +44,19 @@ exports.findTeacher = function(request) {
         return foundTeacher;
 }
 
+exports.findStudent = function(request) {
+    const { id } = request.params;
+    const foundTeacher = finalData.find(
+        function(aStudent) {
+            return (Number(id) === Number(aStudent.id));
+        }
+    );
+    if(!foundTeacher)
+        return false;
+    else
+        return foundTeacher;
+}
+
 exports.graduation = function(aString) {
     switch (aString) {
         case "highSchool":

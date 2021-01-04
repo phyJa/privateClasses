@@ -1,0 +1,18 @@
+{% extends "cardLayout.njk" %}
+
+{% block content %}
+    <form class="card" method="POST" action="/teachers/create">
+        <div class="imageContainer">
+            {#  Image goes here by CSS #}    
+        </div>
+        <div class="dataContainer">
+            <div class="sectionName">
+                <h2> Create teacher </h2>
+            </div>
+            {% include "teachers/fields.njk" %}
+            <div class="buttonContainer">
+                <button type="submit"> Create teacher </button>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

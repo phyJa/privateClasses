@@ -4,21 +4,21 @@ const routes = express.Router();
 // Functions
 const {
     editTeacher, 
-    renderLanding,
-    renderCreate,
-    renderEdit,
+    renderTeacherLanding,
+    renderTeacherCreate,
+    renderTeacherEdit,
     deleteTeacher,
     showTeacher,
-    validateAndWriteData
+    validateAndWriteTeacherData
 } = require("./controllers/teachers");
 // Routes
 // Render and show (GET)
-routes.get("/", renderLanding);
-routes.get("/teachers/create", renderCreate);
+routes.get("/", renderTeacherLanding);
+routes.get("/teachers/create", renderTeacherCreate);
 routes.get("/teachers/:id/show", showTeacher);
-routes.get("/teachers/:id/edit", renderEdit);
+routes.get("/teachers/:id/edit", renderTeacherEdit);
 // Create (POST)
-routes.post("/teachers/create", validateAndWriteData);
+routes.post("/teachers/create", validateAndWriteTeacherData);
 // Modify (PUT)
 routes.put("/teachers/edit", editTeacher);
 //Delete (DELETE)

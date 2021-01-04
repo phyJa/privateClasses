@@ -4,47 +4,47 @@ const finalData = require("../../data.json");
 const { 
     age, 
     date, 
-    findTeacher,
+    findStudent,
     graduation
 } = require("../utils");
 
 module.exports = {
-    renderTeacherLanding(request, response) {
-        let newTeacherData = [...finalData];
-        for(let aTeacher of newTeacherData) {
-            aTeacher.subjects = String(aTeacher.subjects).split(",");
+    renderStudentLanding(request, response) {
+        let newStudentData = [...finalData];
+        for(let aStudent of newStudentData) {
+            aStudent.subjects = String(aStudent.subjects).split(",");
         }
         return response.render(
             "landing",
             {
-                teachers: newTeacherData
+                students: newStudentData
             }
         );
     },
 
-    renderTeacherCreate(request, response ) {
-        return response.render("teachers/create");
+    renderStudentCreate(request, response ) {
+        return response.render("students/create");
     },
 
-    renderTeacherEdit(request, response) {
-        // Find the teacher
-        const foundTeacher = findTeacher(request); 
-        if(!foundTeacher)
-            return response.status(404).send("Teacher not found....");
+    renderStudentEdit(request, response) {
+        // Find the student
+        const foundStudent = findStudent(request); 
+        if(!foundStudent)
+            return response.status(404).send("Student not found....");
         else {
-            const teacher = {
-                ...foundTeacher,
-                since: date(foundTeacher.since)
+            const student = {
+                ...foundStudent,
+                since: date(foundStudent.since)
             };
-            return response.render("teachers/edit", { teacher });
+            return response.render("students/edit", { student });
         }     
     },
 
-    deleteTeacher(request, response) {
-        // Get the the teacher id
+    deleteStudent(request, response) {
+        // Get the the student id
         const { id } = request.body;
-        // Create a new array excluding the selected teacher
-        const newTeachersSet = finalData.filter(
+        // Create a new array excluding the selected student
+        const newStudentsSet = finalData.filter(
             function(anInstructor) {
                 if (Number(id) === Number(anInstructor.id))
                     return false;
@@ -55,7 +55,7 @@ module.exports = {
         // Write this new array in "data.json"
         fs.writeFile(
             "data.json",
-            JSON.stringify(newTeachersSet, null, 2),
+            JSON.stringify(newStudentsSet, null, 2),
             function(error) {
                 if(error)
                     return response.status(500).send("Error writing file");
@@ -66,68 +66,68 @@ module.exports = {
         
     },
 
-    editTeacher(request, response) {
-        // Find the teacher
+    editStudent(request, response) {
+        // Find the student
         const { id } = request.body;
-        const foundTeacher = finalData.find(
+        const foundStudent = finalData.find(
             function(anInstructor) {
                 return (Number(id) === Number(anInstructor.id));
             }
         );
-        if(!foundTeacher)
-            return response.status(404).send("Teacher not found....");
+        if(!foundStudent)
+            return response.status(404).send("Student not found....");
         else {
             const newData = request.body;
             newData.id = Number(id);
-            const teacher = {
-                ...foundTeacher,
+            const student = {
+                ...foundStudent,
                 ...newData
             };
             // Get the index
-            let teacherIndex = 0;
+            let studentIndex = 0;
             finalData.find(
-                function (aTeacher, theIndex) {
-                    if(Number(aTeacher.id) === Number(teacher.id)) {
-                        teacherIndex = theIndex;
+                function (aStudent, theIndex) {
+                    if(Number(aStudent.id) === Number(student.id)) {
+                        studentIndex = theIndex;
                         return true;
                     }
                 }
             );
             // Save the new data in the array
-            finalData[teacherIndex] = teacher;
+            finalData[studentIndex] = student;
             // Write the file
             fs.writeFile(
                 "data.json",
                 JSON.stringify(finalData, null, 2),
                 function(error) {
                     if(error) return response.send("Error writing file");
-                    else return response.redirect(`/teachers/${id}/show`);
+                    else return response.redirect(`/students/${id}/show`);
                 }
             );
         }
     },
 
-    showTeacher(request, response) {
-        // Find the teacher
-        const foundTeacher = findTeacher(request); 
-        if(!foundTeacher)
-            return response.status(404).send("Teacher not found....");
+    showStudent(request, response) {
+        // Find the student
+        const foundStudent = findStudent(request); 
+        if(!foundStudent)
+            return response.status(404).send("Student not found....");
         // Adjusts
-        const teacher = {
-            ...foundTeacher,
-            age: age(foundTeacher.birth),
-            since: new Intl.DateTimeFormat("en-US").format(foundTeacher.since),
-            studyLevel: graduation(foundTeacher.studyLevel),
-            subjects: String(foundTeacher.subjects).split(","),
+        const student = {
+            ...foundStudent,
+            age: age(foundStudent.birth),
+            since: new Intl.DateTimeFormat("en-US").format(foundStudent.since),
+            studyLevel: graduation(foundStudent.studyLevel),
+            subjects: String(foundStudent.subjects).split(","),
         };
         // Render the page
         return response.render(
-            "teachers/show",
-            { teacher }
+            "students/show",
+            { student }
         );
     },
 
-    validateAndWriteTeacherData(request, response) {
+    validateAndWriteStudentData(request, response) {
         // Validation
         const dataKeys = Object.keys(request.body);
         const data = request.body;

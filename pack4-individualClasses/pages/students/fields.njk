@@ -1,0 +1,124 @@
+<div class="name">
+    <div class="title"> 
+        <span> Teacher name </span> 
+    </div>
+    <div class="data">
+        <input 
+            name="name" 
+            type="text" 
+            placeholder="Type the name of the teacher"
+            value="{{ teacher.name }}"
+        />
+    </div>
+</div>
+<div class="birth">
+    <div class="title"> 
+        <span> Birth date: </span> 
+    </div>
+    <div class="data">
+        <input 
+            type="date" 
+            name="birth"
+            value="{{ teacher.birth }}"
+        /> 
+    </div>
+</div>
+<div class="avatar_url">
+    <div class="title">
+        <span> URL to the teacher avatar </span>
+    </div>
+    <div class="data">
+        <input 
+            type="url" 
+            name="avatar_url" 
+            placeholder="Type the URL here..."
+            value="{{ teacher.avatar_url }}"
+        />
+    </div>
+</div>
+<div class="studyLevel">
+    <div class="title"> 
+        <span> Level of studies </span> 
+    </div>
+    <div class="data">
+        <select name="studyLevel">
+            <option disabled selected> Choose an option </option>
+            <option 
+                value="highSchool" 
+                {% if teacher.studyLevel == "highScholl" %}
+                    selected
+                {% endif %}
+            > 
+                High School 
+            </option>
+            <option 
+                value="undergraduate"
+                {% if teacher.studyLevel == "undergraduate" %}
+                    selected
+                {% endif %}
+            > 
+                Undergraduate 
+            </option>
+            <option 
+                value="master"
+                {% if teacher.studyLevel == "master" %}
+                    selected
+                {% endif %}
+            > 
+                Master 
+            </option>
+            <option 
+                value="doctorate"
+                {% if teacher.studyLevel == "doctorate" %}
+                    selected
+                {% endif %}
+            >
+                Doctorate 
+            </option>
+        </select>
+    </div>
+</div>
+<div class="classType">
+    <div class="title"> 
+        <span> Type of classes </span> 
+    </div>
+    <div class="data">
+        <span class="classroom">
+            <div>
+                <input 
+                type="radio" 
+                name="classType" 
+                value="face-to-face" 
+                {% if teacher.classType == "face-to-face" %}
+                    checked
+                {% endif %}
+            /> Classroom course
+            </div> 
+        </span>
+        <span class="online">
+            <div class="">
+                <input 
+                    type="radio" 
+                    name="classType" 
+                    value="online"
+                    {% if teacher.classType == "online" %}
+                        checked
+                    {% endif %}
+                /> Online course
+            </div>
+        </span>
+    </div>
+</div>
+<div class="subjects">
+    <div class="title">        
+        <span> Subjects </span> 
+    </div>
+    <div class="data">
+        <input 
+            type="text" 
+            name="subjects" 
+            placeholder="Type here the subjects and separate them by comma"
+            value="{{ teacher.subjects }}"
+        />
+    </div>
+</div>  
