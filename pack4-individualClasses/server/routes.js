@@ -11,7 +11,17 @@ const {
     showTeacher,
     validateAndWriteTeacherData
 } = require("./controllers/teachers");
+const {
+    editStudent, 
+    renderStudentLanding,
+    renderStudentCreate,
+    renderStudentEdit,
+    deleteStudent,
+    showStudent,
+    validateAndWriteStudentData
+} = require("./controllers/students");
 // Routes
+// Teachers
 // Render and show (GET)
 routes.get("/", renderTeacherLanding);
 routes.get("/teachers/create", renderTeacherCreate);
@@ -23,5 +33,17 @@ routes.post("/teachers/create", validateAndWriteTeacherData);
 routes.put("/teachers/edit", editTeacher);
 //Delete (DELETE)
 routes.delete("/teachers/edit", deleteTeacher);
+// Students
+// Render and show (GET)
+routes.get("/students", renderStudentLanding);
+routes.get("/students/create", renderStudentCreate);
+routes.get("/students/:id/show", showStudent);
+routes.get("/students/:id/edit", renderStudentEdit);
+// Create (POST)
+routes.post("/students/create", validateAndWriteStudentData);
+// Modify (PUT)
+routes.put("/students/edit", editStudent);
+//Delete (DELETE)
+routes.delete("/students/edit", deleteStudent);
 // Export
 module.exports = routes;

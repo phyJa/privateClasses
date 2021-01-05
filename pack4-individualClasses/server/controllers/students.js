@@ -1,6 +1,6 @@
 // Requires
 const fs = require("fs");
-const finalData = require("../../data.json");
+const studentsData = require("../../data.json").students;
 const { 
     age, 
     date, 
@@ -10,12 +10,12 @@ const {
 
 module.exports = {
     renderStudentLanding(request, response) {
-        let newStudentData = [...finalData];
+        let newStudentData = [...studentsData];
         for(let aStudent of newStudentData) {
             aStudent.subjects = String(aStudent.subjects).split(",");
         }
         return response.render(
-            "landing",
+            "students/index",
             {
                 students: newStudentData
             }
@@ -44,7 +44,7 @@ module.exports = {
         // Get the the student id
         const { id } = request.body;
         // Create a new array excluding the selected student
-        const newStudentsSet = finalData.filter(
+        const newStudentsSet = studentsData.filter(
             function(anInstructor) {
                 if (Number(id) === Number(anInstructor.id))
                     return false;
@@ -69,7 +69,7 @@ module.exports = {
     editStudent(request, response) {
         // Find the student
         const { id } = request.body;
-        const foundStudent = finalData.find(
+        const foundStudent = studentsData.find(
             function(anInstructor) {
                 return (Number(id) === Number(anInstructor.id));
             }
@@ -85,7 +85,7 @@ module.exports = {
             };
             // Get the index
             let studentIndex = 0;
-            finalData.find(
+            studentsData.find(
                 function (aStudent, theIndex) {
                     if(Number(aStudent.id) === Number(student.id)) {
                         studentIndex = theIndex;
@@ -94,11 +94,11 @@ module.exports = {
                 }
             );
             // Save the new data in the array
-            finalData[studentIndex] = student;
+            studentsData[studentIndex] = student;
             // Write the file
             fs.writeFile(
                 "data.json",
-                JSON.stringify(finalData, null, 2),
+                JSON.stringify(studentsData, null, 2),
                 function(error) {
                     if(error) return response.send("Error writing file");
                     else return response.redirect(`/students/${id}/show`);
@@ -135,13 +135,13 @@ module.exports = {
             if(data[aDataKey] === "")
                 return response.status(400).send("Please, fill all the fields");
         }
-        data.id = Number(finalData.length) + 1;
+        data.id = Number(studentsData.length) + 1;
         data.since = Date.now();
         // Write
-        finalData.push(data);
+        studentsData.push(data);
         fs.writeFile(
             "data.json", 
-            JSON.stringify(finalData, null, 2), 
+            JSON.stringify(studentsData, null, 2), 
             function (error) {
                 if(error)
                     return response.send(error);
