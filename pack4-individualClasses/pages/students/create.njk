@@ -14,5 +14,11 @@
                 <button type="submit"> Create teacher </button>
             </div>
         </div>
+        <input 
+            type="hidden" 
+            id="avatar_url"
+            value="{{ teacher.avatar_url }}" 
+        />
+        <script src="/scripts/showImage.js"></script>
     </form>
 {% endblock content %}

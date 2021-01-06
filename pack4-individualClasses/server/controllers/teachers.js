@@ -1,6 +1,6 @@
 // Requires
 const fs = require("fs");
-const teachersData = require("../../data.json").teachers;
+const totalData = require("../../data.json");
 const { 
     age, 
     date, 
@@ -10,7 +10,7 @@ const {
 
 module.exports = {
     renderTeacherLanding(request, response) {
-        let newTeacherData = [...teachersData];
+        let newTeacherData = [...totalData.teachers];
         for(let aTeacher of newTeacherData) {
             aTeacher.subjects = String(aTeacher.subjects).split(",");
         }
@@ -44,7 +44,7 @@ module.exports = {
         // Get the the teacher id
         const { id } = request.body;
         // Create a new array excluding the selected teacher
-        const newTeachersSet = teachersData.filter(
+        const newTeachersSet = totalData.teachers.filter(
             function(anInstructor) {
                 if (Number(id) === Number(anInstructor.id))
                     return false;
@@ -53,9 +53,10 @@ module.exports = {
             }
         );
         // Write this new array in "data.json"
+        totalData.teachers = newTeachersSet;
         fs.writeFile(
             "data.json",
-            JSON.stringify(newTeachersSet, null, 2),
+            JSON.stringify(totalData, null, 2),
             function(error) {
                 if(error)
                     return response.status(500).send("Error writing file");
@@ -69,7 +70,7 @@ module.exports = {
     editTeacher(request, response) {
         // Find the teacher
         const { id } = request.body;
-        const foundTeacher = teachersData.find(
+        const foundTeacher = totalData.teachers.find(
             function(anInstructor) {
                 return (Number(id) === Number(anInstructor.id));
             }
@@ -85,7 +86,7 @@ module.exports = {
             };
             // Get the index
             let teacherIndex = 0;
-            teachersData.find(
+            totalData.teachers.find(
                 function (aTeacher, theIndex) {
                     if(Number(aTeacher.id) === Number(teacher.id)) {
                         teacherIndex = theIndex;
@@ -94,11 +95,11 @@ module.exports = {
                 }
             );
             // Save the new data in the array
-            teachersData[teacherIndex] = teacher;
+            totalData.teachers[teacherIndex] = teacher;
             // Write the file
             fs.writeFile(
                 "data.json",
-                JSON.stringify(teachersData, null, 2),
+                JSON.stringify(totalData, null, 2),
                 function(error) {
                     if(error) return response.send("Error writing file");
                     else return response.redirect(`/teachers/${id}/show`);
@@ -135,13 +136,13 @@ module.exports = {
             if(data[aDataKey] === "")
                 return response.status(400).send("Please, fill all the fields");
         }
-        data.id = Number(teachersData.length) + 1;
+        data.id = Number(totalData.teachers.length) + 1;
         data.since = Date.now();
         // Write
-        teachersData.push(data);
+        totalData.teachers.push(data);
         fs.writeFile(
             "data.json", 
-            JSON.stringify(teachersData, null, 2), 
+            JSON.stringify(totalData, null, 2), 
             function (error) {
                 if(error)
                     return response.send(error);

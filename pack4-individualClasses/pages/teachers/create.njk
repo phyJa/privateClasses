@@ -13,6 +13,12 @@
             <div class="buttonContainer">
                 <button type="submit"> Create teacher </button>
             </div>
+            <input 
+                type="hidden" 
+                id="avatar_url"
+                value="{{ teacher.avatar_url }}" 
+            />
         </div>
     </form>
+    <script src="/scripts/showImage.js"></script>
 {% endblock content %}

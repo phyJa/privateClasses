@@ -1,6 +1,6 @@
 // Get the elements
 const imageContainer = document.querySelector(".card .imageContainer");
-const input = document.querySelector(".card .dataContainer form .avatar_url .data input");
+const input = document.querySelector(".card .dataContainer .avatar_url .data input");
 const avatarUrl = document.getElementById("avatar_url");
 
 // Display the old image
