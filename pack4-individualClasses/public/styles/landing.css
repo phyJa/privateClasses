@@ -44,15 +44,16 @@ header {
 }
 
 header a {
-
     text-decoration: none;
-
-    color: var(--main-color);
-    
     font-size: 22px;
-
     position: relative;
+    color: gray;
+    transition: color 300ms;
+}
 
+header a.active,
+header a:hover {
+    color: var(--main-color);
 }
 
 header a::after {

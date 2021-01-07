@@ -23,7 +23,7 @@ const {
 // Routes
 // Teachers
 // Render and show (GET)
-routes.get("/", renderTeacherLanding);
+routes.get("/teachers", renderTeacherLanding);
 routes.get("/teachers/create", renderTeacherCreate);
 routes.get("/teachers/:id/show", showTeacher);
 routes.get("/teachers/:id/edit", renderTeacherEdit);
