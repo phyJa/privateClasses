@@ -136,7 +136,8 @@ module.exports = {
             if(data[aDataKey] === "")
                 return response.status(400).send("Please, fill all the fields");
         }
-        data.id = Number(totalData.teachers.length) + 1;
+        data.id = (totalData.teachers.length === 0) ? 1 
+            : totalData.teachers[totalData.teachers.length - 1].id + 1;
         data.since = Date.now();
         // Write
         totalData.teachers.push(data);
