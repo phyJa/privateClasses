@@ -1,4 +1,6 @@
-const teachersData = require("../data.json").teachers;
+const data = require("../data.json");
+const teachersData = data.teachers;
+const studentsData = data.students;
 
 // dateString: yyyy-mm-dd
 exports.age = function (dateString) {
@@ -28,7 +30,13 @@ exports.date = function(currentTimestamp) {
         day: `0${now.getUTCDate()}`.slice(-2)
     }
     // Return
-    return (`${nowData.year}-${nowData.month}-${nowData.day}`);
+    return {
+        day,
+        year,
+        month,
+        birthDay: `${day}/${month}`, 
+        iso: `${nowData.year}-${nowData.month}-${nowData.day}`
+    };
 }
 
 exports.findTeacher = function(request) {
@@ -46,15 +54,15 @@ exports.findTeacher = function(request) {
 
 exports.findStudent = function(request) {
     const { id } = request.params;
-    const foundTeacher = teachersData.find(
+    const foundStudent = studentsData.find(
         function(aStudent) {
             return (Number(id) === Number(aStudent.id));
         }
     );
-    if(!foundTeacher)
+    if(!foundStudent)
         return false;
     else
-        return foundTeacher;
+        return foundStudent;
 }
 
 exports.graduation = function(aString) {

@@ -1,13 +1,13 @@
 <div class="name">
     <div class="title"> 
-        <span> Teacher name </span> 
+        <span> Student name </span> 
     </div>
     <div class="data">
         <input 
             name="name" 
             type="text" 
-            placeholder="Type the name of the teacher"
-            value="{{ teacher.name }}"
+            placeholder="Type the name of the student"
+            value="{{ student.name }}"
         />
     </div>
 </div>
@@ -19,106 +19,66 @@
         <input 
             type="date" 
             name="birth"
-            value="{{ teacher.birth }}"
+            value="{{ student.birth }}"
         /> 
+    </div>
+</div>
+<div class="email">
+    <div class="title"> 
+        <span> Email: </span> 
+    </div>
+    <div class="data">
+        <input 
+            type="email" 
+            name="email"
+            value="{{ student.email }}"
+        /> 
+    </div>
+</div>
+<div class="schoolYear">
+    <div class="title"> 
+        <span> School year: </span> 
+    </div>
+    <div class="data">
+        <select name="schoolYear">
+            <option value="" disabled selected> Fundamental </option>
+            <option value="5th-year"> 5th year </option>
+            <option value="6th-year"> 6th year </option>
+            <option value="7th-year"> 7th year </option>
+            <option value="8th-year"> 8th year </option>
+            <option value="9th-year"> 9th year </option>
+            <option value="" disabled> High School </option>
+            <option value="1st-year-highSchool"> 1st year </option>
+            <option value="2nd-year-highSchool"> 2nd year </option>
+            <option value="3rd-year-highSchool"> 3rd year </option>
+        </select>
+    </div>
+</div>
+<div class="weekHours">
+    <div class="title">
+        <span> Week hours </span>
+    </div>
+    <div class="data">
+        <input 
+            type="number" 
+            name="weekHours"
+            min="0" 
+            placeholder="Type the number of hours (positive number)..."
+            value="{{ student.weekHours }}"
+        />
     </div>
 </div>
 <div class="avatar_url">
     <div class="title">
-        <span> URL to the teacher avatar </span>
+        <span> URL to the student avatar </span>
     </div>
     <div class="data">
         <input 
             type="url" 
             name="avatar_url" 
             placeholder="Type the URL here..."
-            value="{{ teacher.avatar_url }}"
+            value="{{ student.avatar_url }}"
         />
     </div>
 </div>
-<div class="studyLevel">
-    <div class="title"> 
-        <span> Level of studies </span> 
-    </div>
-    <div class="data">
-        <select name="studyLevel">
-            <option disabled selected> Choose an option </option>
-            <option 
-                value="highSchool" 
-                {% if teacher.studyLevel == "highScholl" %}
-                    selected
-                {% endif %}
-            > 
-                High School 
-            </option>
-            <option 
-                value="undergraduate"
-                {% if teacher.studyLevel == "undergraduate" %}
-                    selected
-                {% endif %}
-            > 
-                Undergraduate 
-            </option>
-            <option 
-                value="master"
-                {% if teacher.studyLevel == "master" %}
-                    selected
-                {% endif %}
-            > 
-                Master 
-            </option>
-            <option 
-                value="doctorate"
-                {% if teacher.studyLevel == "doctorate" %}
-                    selected
-                {% endif %}
-            >
-                Doctorate 
-            </option>
-        </select>
-    </div>
-</div>
-<div class="classType">
-    <div class="title"> 
-        <span> Type of classes </span> 
-    </div>
-    <div class="data">
-        <span class="classroom">
-            <div>
-                <input 
-                type="radio" 
-                name="classType" 
-                value="face-to-face" 
-                {% if teacher.classType == "face-to-face" %}
-                    checked
-                {% endif %}
-            /> Classroom course
-            </div> 
-        </span>
-        <span class="online">
-            <div class="">
-                <input 
-                    type="radio" 
-                    name="classType" 
-                    value="online"
-                    {% if teacher.classType == "online" %}
-                        checked
-                    {% endif %}
-                /> Online course
-            </div>
-        </span>
-    </div>
-</div>
-<div class="subjects">
-    <div class="title">        
-        <span> Subjects </span> 
-    </div>
-    <div class="data">
-        <input 
-            type="text" 
-            name="subjects" 
-            placeholder="Type here the subjects and separate them by comma"
-            value="{{ teacher.subjects }}"
-        />
-    </div>
-</div>  
+ 

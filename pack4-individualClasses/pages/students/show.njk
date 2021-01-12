@@ -2,50 +2,48 @@
 
 {% block content %}
     <div class="card">
-        <div class="imageContainer" style="background: url( {{ teacher.avatar_url }} ) no-repeat center center / cover">
+        <div class="imageContainer" style="background: url( {{ student.avatar_url }} ) no-repeat center center / cover">
             {#  Image goes here by CSS #}
         </div>
         <div class="dataContainer">
             <div class="name">
                 <div class="title"> 
-                    <span> Teacher name </span> 
+                    <span> Student name </span> 
                 </div>
                 <div class="data">
-                    <span> {{ teacher.name }} </span>
+                    <span> {{ student.name }} </span>
                 </div>
             </div>
             <div class="age">
                 <div class="title"> 
-                    <span> Teacher age </span> 
+                    <span> Student age </span> 
                 </div>
                 <div class="data">
-                    <span> {{ teacher.age }} </span>
+                    <span> {{ student.age }} </span>
                 </div>
             </div>
-            <div class="studyLevel">
+            <div class="email">
                 <div class="title"> 
-                    <span> Level of studies </span> 
+                    <span> Student email </span> 
                 </div>
                 <div class="data">
-                    <span> {{ teacher.studyLevel }} </span>
+                    <span> {{ student.email }} </span>
                 </div>
             </div>
-            <div class="classType">
+            <div class="schoolYear">
                 <div class="title"> 
-                    <span> Type of classes </span> 
-                </div> 
+                    <span> Student School Year </span> 
+                </div>
                 <div class="data">
-                    <span> {{ teacher.classType }} </span>
+                    <span> {{ student.schoolYear }} </span>
                 </div>
             </div>
-            <div class="subjects">
+            <div class="weekHours">
                 <div class="title"> 
-                    <span> Subjects </span> 
+                    <span> Student Week Hours </span> 
                 </div>
                 <div class="data">
-                    {% for subject in teacher.subjects %}
-                        <span> {{ subject }} </span>
-                    {% endfor %}
+                    <span> {{ student.weekHours }} </span>
                 </div>
             </div>
             <div class="since">
@@ -53,11 +51,11 @@
                     <span> Since </span> 
                 </div>
                 <div class="data">
-                    <span> {{ teacher.since }} </span>
+                    <span> {{ student.since }} </span>
                 </div>
             </div>
             <div class="buttonContainer">
-                <a href="/teachers/{{ teacher.id }}/edit"> Edit instructor data </a>
+                <a href="/students/{{ student.id }}/edit"> Edit instructor data </a>
             </div>
         </div>
     </div>

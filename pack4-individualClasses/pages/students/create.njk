@@ -1,23 +1,23 @@
 {% extends "cardLayout.njk" %}
 
 {% block content %}
-    <form class="card" method="POST" action="/teachers/create">
+    <form class="card" method="POST" action="/students/create">
         <div class="imageContainer">
             {#  Image goes here by CSS #}    
         </div>
         <div class="dataContainer">
             <div class="sectionName">
-                <h2> Create teacher </h2>
+                <h2> Create student </h2>
             </div>
-            {% include "teachers/fields.njk" %}
+            {% include "students/fields.njk" %}
             <div class="buttonContainer">
-                <button type="submit"> Create teacher </button>
+                <button type="submit"> Create student </button>
             </div>
         </div>
         <input 
             type="hidden" 
             id="avatar_url"
-            value="{{ teacher.avatar_url }}" 
+            value="{{ student.avatar_url }}" 
         />
         <script src="/scripts/showImage.js"></script>
     </form>

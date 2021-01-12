@@ -34,7 +34,7 @@ module.exports = {
         else {
             const student = {
                 ...foundStudent,
-                since: date(foundStudent.since)
+                since: date(foundStudent.since).iso
             };
             return response.render("students/edit", { student });
         }     

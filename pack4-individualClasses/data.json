@@ -1,5 +1,16 @@
 {
-  "students": [],
+  "students": [
+    {
+      "name": "Claire Grey",
+      "birth": "2000-02-12",
+      "email": "claire@test.com",
+      "schoolYear": "3rd-year-highSchool",
+      "weekHours": "34",
+      "avatar_url": "https://images.unsplash.com/photo-1572112686886-5c0b5bc8dacd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80",
+      "id": 1,
+      "since": 1610388360344
+    }
+  ],
   "teachers": [
     {
       "name": "Kate 2",
@@ -47,7 +58,11 @@
       "avatar_url": "https://images.unsplash.com/flagged/photo-1559475555-b26777ed3ab4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80",
       "studyLevel": "doctorate",
       "classType": "face-to-face",
-      "subjects": "History, Geography, Philosophy",
+      "subjects": [
+        "History",
+        " Geography",
+        " Philosophy"
+      ],
       "id": 6,
       "since": 1610023429840
     }
