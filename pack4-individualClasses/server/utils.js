@@ -31,10 +31,10 @@ exports.date = function(currentTimestamp) {
     }
     // Return
     return {
-        day,
-        year,
-        month,
-        birthDay: `${day}/${month}`, 
+        day: nowData.day,
+        year: nowData.year,
+        month: nowData.month,
+        //birthDay: `${day}/${month}`, 
         iso: `${nowData.year}-${nowData.month}-${nowData.day}`
     };
 }

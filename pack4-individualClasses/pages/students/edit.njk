@@ -6,36 +6,36 @@
                 {#  Image goes here by CSS #}    
         </div>
         <div class="dataContainer">
-            <form method="POST" action="/teachers/edit/?_method=PUT">
+            <form method="POST" action="/students/edit/?_method=PUT">
                 <div class="sectionName">
-                    <h2> Edit teacher data </h2>
+                    <h2> Edit student data </h2>
                 </div>
-                {% include "teachers/fields.njk" %}
+                {% include "students/fields.njk" %}
                 <div class="buttonContainer">
                     <button type="submit"> Save new data </button>
                     <button 
                         type="submit" 
                         id="deleteButton" 
-                        value="Delete teacher"
+                        value="Delete student"
                         form="deleteForm"
-                    > Delete teacher </button>
+                    > Delete student </button>
                 </div>
                 <input 
                     type="hidden" 
                     name="id"
-                    value="{{ teacher.id }}" 
+                    value="{{ student.id }}" 
                 />
                 <input 
                     type="hidden" 
                     id="avatar_url"
-                    value="{{ teacher.avatar_url }}" 
+                    value="{{ student.avatar_url }}" 
                 />
             </form>
-            <form method="POST" id="deleteForm" action="/teachers/edit/?_method=DELETE">
+            <form method="POST" id="deleteForm" action="/students/edit/?_method=DELETE">
                 <input 
                     type="hidden" 
                     name="id"
-                    value="{{ teacher.id }}" 
+                    value="{{ student.id }}" 
                 />
             </form>
         </div>
