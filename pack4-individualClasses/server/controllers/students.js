@@ -4,19 +4,16 @@ const totalData =  require("../../data.json");
 const { 
     age, 
     findStudent,
-    grade
+    grade,
+    date
 } = require("../utils");
 
 module.exports = {
     renderStudentLanding(request, response) {
-        let newStudentData = [...totalData.students];
-        for(let aStudent of newStudentData) {
-            aStudent.subjects = String(aStudent.subjects).split(",");
-        }
         return response.render(
             "students/index",
             {
-                students: newStudentData
+                students: totalData.students
             }
         );
     },
@@ -116,7 +113,9 @@ module.exports = {
             age: age(foundStudent.birth),
             since: new Intl.DateTimeFormat("en-US").format(foundStudent.since),
             schoolYear: grade(foundStudent.schoolYear),
-            subjects: String(foundStudent.subjects).split(","),
+            birthDay: date(
+                Date.parse(foundStudent.birth)
+            ).birthDay
         };
         // Render the page
         return response.render(
