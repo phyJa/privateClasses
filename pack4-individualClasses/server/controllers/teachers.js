@@ -2,8 +2,7 @@
 const fs = require("fs");
 const totalData = require("../../data.json");
 const { 
-    age, 
-    date, 
+    age,
     findTeacher,
     graduation
 } = require("../utils");
@@ -33,8 +32,7 @@ module.exports = {
             return response.status(404).send("Teacher not found....");
         else {
             const teacher = {
-                ...foundTeacher,
-                since: date(foundTeacher.since)
+                ...foundTeacher
             };
             return response.render("teachers/edit", { teacher });
         }     

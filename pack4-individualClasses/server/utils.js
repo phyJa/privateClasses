@@ -21,21 +21,21 @@ exports.age = function (dateString) {
         return (age - 1);
 }
 
-exports.date = function(currentTimestamp) {
+exports.date = function(aTimestamp) {
     // Define
-    const now = new Date(currentTimestamp);
-    const nowData = {
-        year: now.getUTCFullYear(),
-        month: `0${now.getUTCMonth() + 1}`.slice(-2),
-        day: `0${now.getUTCDate()}`.slice(-2)
+    const rawDate = new Date(aTimestamp);
+    const dataObject = {
+        year: rawDate.getUTCFullYear(),
+        month: `0${rawDate.getUTCMonth() + 1}`.slice(-2),
+        day: `0${rawDate.getUTCDate()}`.slice(-2)
     }
     // Return
     return {
-        day: nowData.day,
-        year: nowData.year,
-        month: nowData.month,
-        //birthDay: `${day}/${month}`, 
-        iso: `${nowData.year}-${nowData.month}-${nowData.day}`
+        day: dataObject.day,
+        year: dataObject.year,
+        month: dataObject.month,
+        birthDay: `${dataObject.day}/${dataObject.month}`, 
+        iso: `${dataObject.year}-${dataObject.month}-${dataObject.day}`
     };
 }
 
@@ -63,6 +63,37 @@ exports.findStudent = function(request) {
         return false;
     else
         return foundStudent;
+}
+
+exports.grade = function(aString) {
+    switch(aString) {
+        case "5th-year":
+            return "5th year of Fundamental School";
+
+        case "6th-year":
+            return "6th year of Fundamental School";
+        
+        case "6th-year":
+            return "6th year of Fundamental School";
+        
+        case "7th-year":
+            return "7th year of Fundamental School";
+        
+        case "8th-year":
+            return "8th year of Fundamental School";
+        
+        case "9th-year":
+            return "9th year of Fundamental School";
+        
+        case "1st-year-highSchool":
+            return "1st year of High School";
+        
+        case "2nd-year-highSchool":
+            return "2nd year of High School";
+
+        case "3rd-year-highSchool":
+            return "3rd year of High School";
+    }
 }
 
 exports.graduation = function(aString) {

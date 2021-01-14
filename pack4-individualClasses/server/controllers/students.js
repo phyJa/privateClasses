@@ -3,9 +3,8 @@ const fs = require("fs");
 const totalData =  require("../../data.json");
 const { 
     age, 
-    date, 
     findStudent,
-    graduation
+    grade
 } = require("../utils");
 
 module.exports = {
@@ -34,7 +33,6 @@ module.exports = {
         else {
             const student = {
                 ...foundStudent,
-                since: date(foundStudent.since).iso
             };
             return response.render("students/edit", { student });
         }     
@@ -117,7 +115,7 @@ module.exports = {
             ...foundStudent,
             age: age(foundStudent.birth),
             since: new Intl.DateTimeFormat("en-US").format(foundStudent.since),
-            studyLevel: graduation(foundStudent.studyLevel),
+            schoolYear: grade(foundStudent.schoolYear),
             subjects: String(foundStudent.subjects).split(","),
         };
         // Render the page
