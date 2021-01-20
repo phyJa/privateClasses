@@ -10,8 +10,8 @@ const {
 
 module.exports = {
     renderStudentLanding(request, response) {
-        const newData = JSON.parse(JSON.stringify(totalData));
-        newData.students.forEach(
+        const newStudents = JSON.parse(JSON.stringify(totalData.students));
+        newStudents.forEach(
             function(aStudent) {
                 aStudent.schoolYear = grade(aStudent.schoolYear);
             }
@@ -19,7 +19,7 @@ module.exports = {
         return response.render(
             "students/index",
             {
-                students: newData.students
+                students: newStudents
             }
         );
     },
