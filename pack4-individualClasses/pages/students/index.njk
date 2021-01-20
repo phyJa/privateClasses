@@ -13,7 +13,8 @@
             <thead>
                 <tr>
                     <th> Full Name </th>
-                    <th> Services </th>
+                    <th> Email </th>
+                    <th> School year </th>
                     <th> Actions </th>
                 </tr>
             </thead>
@@ -27,10 +28,11 @@
                             </span>
                             {{ student.name }} 
                         </td> 
-                        <td class="subjects">
-                            {% for subject in teacher.subjects %}
-                                <span class="data"> {{ subject }} </span>
-                            {% endfor %}        
+                        <td class="email">
+                            {{ student.email }}       
+                        </td>
+                        <td class="schoolYear">
+                            {{ student.schoolYear }}       
                         </td> 
                         <td> 
                             <a href="/students/{{ student.id }}/show"> Show </a>  

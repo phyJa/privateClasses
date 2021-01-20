@@ -10,10 +10,16 @@ const {
 
 module.exports = {
     renderStudentLanding(request, response) {
+        const fixSchoolYear = [...totalData];
+        fixSchoolYear.students.forEach(
+            function(aStudent) {
+                aStudent.schoolYear = grade(aStudent.schoolYear);
+            }
+        );
         return response.render(
             "students/index",
             {
-                students: totalData.students
+                students: fixSchoolYear.students
             }
         );
     },
