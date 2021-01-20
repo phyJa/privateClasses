@@ -10,8 +10,8 @@ const {
 
 module.exports = {
     renderStudentLanding(request, response) {
-        const fixSchoolYear = [...totalData];
-        fixSchoolYear.students.forEach(
+        const newData = JSON.parse(JSON.stringify(totalData));
+        newData.students.forEach(
             function(aStudent) {
                 aStudent.schoolYear = grade(aStudent.schoolYear);
             }
@@ -19,7 +19,7 @@ module.exports = {
         return response.render(
             "students/index",
             {
-                students: fixSchoolYear.students
+                students: newData.students
             }
         );
     },
@@ -53,10 +53,12 @@ module.exports = {
                     return true; 
             }
         );
+        // New students of total data
+        totalData.students = newStudentsSet;
         // Write this new array in "data.json"
         fs.writeFile(
             "data.json",
-            JSON.stringify(newStudentsSet, null, 2),
+            JSON.stringify(totalData, null, 2),
             function(error) {
                 if(error)
                     return response.status(500).send("Error writing file");
@@ -114,6 +116,7 @@ module.exports = {
         if(!foundStudent)
             return response.status(404).send("Student not found....");
         // Adjusts
+        console.log(foundStudent);
         const student = {
             ...foundStudent,
             age: age(foundStudent.birth),
@@ -123,6 +126,7 @@ module.exports = {
                 Date.parse(foundStudent.birth)
             ).birthDay
         };
+        console.log(student);
         // Render the page
         return response.render(
             "students/show",

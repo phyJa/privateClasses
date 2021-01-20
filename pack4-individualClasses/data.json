@@ -1,70 +1,35 @@
 {
   "students": [
     {
-      "name": "Claire Grey",
-      "birth": "2000-11-22",
-      "email": "claire@test.com",
-      "schoolYear": "2nd-year-highSchool",
-      "weekHours": "34",
-      "avatar_url": "https://images.unsplash.com/photo-1572112686886-5c0b5bc8dacd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80",
-      "id": 1,
-      "since": 1610388360344
+      "name": "Jennifer",
+      "birth": "1999-12-22",
+      "email": "jennifer@test.com",
+      "weekHours": "30",
+      "avatar_url": "https://images.unsplash.com/photo-1517256673644-36ad11246d21?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80",
+      "id": 2,
+      "since": 1610970762151,
+      "schoolYear": "1st-year-highSchool"
+    },
+    {
+      "name": "Jane",
+      "birth": "1996-12-22",
+      "email": "jane@test.com",
+      "weekHours": "38",
+      "avatar_url": "https://images.unsplash.com/photo-1530878131793-cc5cbcba9a47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=335&q=80",
+      "id": 3,
+      "since": 1610971262289,
+      "schoolYear": "2nd-year-highSchool"
+    },
+    {
+      "name": "James",
+      "birth": "1990-11-22",
+      "email": "james@test.com",
+      "weekHours": "40",
+      "avatar_url": "https://images.unsplash.com/photo-1545696968-1a5245650b36?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=717&q=80",
+      "id": 4,
+      "since": 1610971575250,
+      "schoolYear": "1st-year-highSchool"
     }
   ],
-  "teachers": [
-    {
-      "name": "Kate 2",
-      "birth": "1996-07-10",
-      "avatar_url": "https://images.unsplash.com/photo-1572679079418-de9c4361425d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-      "studyLevel": "master",
-      "classType": "face-to-face",
-      "subjects": [
-        "Math",
-        " Physics",
-        " Chemistry"
-      ],
-      "id": 2,
-      "since": 1606833520958
-    },
-    {
-      "name": "Barbara Eva Brown",
-      "birth": "1997-09-11",
-      "avatar_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-      "studyLevel": "master",
-      "classType": "face-to-face",
-      "subjects": [
-        "History"
-      ],
-      "id": 4,
-      "since": 1606921401189
-    },
-    {
-      "name": "John Will",
-      "birth": "1976-12-12",
-      "avatar_url": "https://images.unsplash.com/photo-1597570889212-97f48e632dad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=755&q=80",
-      "studyLevel": "master",
-      "classType": "face-to-face",
-      "subjects": [
-        "Physics",
-        " Math",
-        " Programming"
-      ],
-      "id": 5,
-      "since": 1610022949565
-    },
-    {
-      "name": "Jake Cage",
-      "birth": "1990-12-12",
-      "avatar_url": "https://images.unsplash.com/flagged/photo-1559475555-b26777ed3ab4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80",
-      "studyLevel": "doctorate",
-      "classType": "face-to-face",
-      "subjects": [
-        "History",
-        " Geography",
-        " Philosophy"
-      ],
-      "id": 6,
-      "since": 1610023429840
-    }
-  ]
+  "teachers": []
 }
