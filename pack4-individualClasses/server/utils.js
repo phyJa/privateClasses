@@ -73,9 +73,6 @@ exports.grade = function(aString) {
         case "6th-year":
             return "6th year of Fundamental School";
         
-        case "6th-year":
-            return "6th year of Fundamental School";
-        
         case "7th-year":
             return "7th year of Fundamental School";
         
@@ -93,6 +90,9 @@ exports.grade = function(aString) {
 
         case "3rd-year-highSchool":
             return "3rd year of High School";
+
+        default:
+            return "Sorry, there was an error here...";
     }
 }
 
