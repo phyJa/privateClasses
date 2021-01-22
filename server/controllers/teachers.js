@@ -9,7 +9,7 @@ const {
 
 module.exports = {
     renderTeacherLanding(request, response) {
-        let newTeacherData = [...totalData.teachers];
+        const newTeacherData = JSON.parse(JSON.stringify(totalData.teachers));
         for(let aTeacher of newTeacherData) {
             aTeacher.subjects = String(aTeacher.subjects).split(",");
         }
