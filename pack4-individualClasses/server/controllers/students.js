@@ -116,7 +116,6 @@ module.exports = {
         if(!foundStudent)
             return response.status(404).send("Student not found....");
         // Adjusts
-        console.log(foundStudent);
         const student = {
             ...foundStudent,
             age: age(foundStudent.birth),
@@ -126,7 +125,6 @@ module.exports = {
                 Date.parse(foundStudent.birth)
             ).birthDay
         };
-        console.log(student);
         // Render the page
         return response.render(
             "students/show",

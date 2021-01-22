@@ -42,15 +42,71 @@
     <div class="data">
         <select name="schoolYear">
             <option value="" disabled selected> Fundamental </option>
-            <option value="5th-year"> 5th year </option>
-            <option value="6th-year"> 6th year </option>
-            <option value="7th-year"> 7th year </option>
-            <option value="8th-year"> 8th year </option>
-            <option value="9th-year"> 9th year </option>
+            <option 
+                value="5th-year"
+                {% if student.schoolYear === "5th-year" %}
+                    selected
+                {% endif %}
+            > 
+                5th year 
+            </option>
+            <option 
+                value="6th-year"
+                {% if student.schoolYear === "6th-year" %}
+                    selected
+                {% endif %}
+            > 
+                6th year 
+            </option>
+            <option 
+                value="7th-year"
+                {% if student.schoolYear === "7th-year" %}
+                    selected
+                {% endif %}
+            > 
+                7th year 
+            </option>
+            <option 
+                value="8th-year"
+                {% if student.schoolYear === "8th-year" %}
+                    selected
+                {% endif %}
+            > 
+                8th year 
+            </option>
+            <option 
+                value="9th-year"
+                {% if student.schoolYear === "9th-year" %}
+                    selected
+                {% endif %}
+            > 
+                9th year 
+            </option>
             <option value="" disabled> High School </option>
-            <option value="1st-year-highSchool"> 1st year </option>
-            <option value="2nd-year-highSchool"> 2nd year </option>
-            <option value="3rd-year-highSchool"> 3rd year </option>
+            <option 
+                value="1st-year-highSchool"
+                {% if student.schoolYear === "1st-year-highSchool" %}
+                    selected
+                {% endif %}
+            > 
+                1st year 
+            </option>
+            <option 
+                value="2nd-year-highSchool"
+                {% if student.schoolYear === "2nd-year-highSchool" %}
+                    selected
+                {% endif %}
+            > 
+                2nd year 
+            </option>
+            <option 
+                value="3rd-year-highSchool"
+                {% if student.schoolYear === "3rd-year-highSchool" %}
+                    selected
+                {% endif %}
+            > 
+                3rd year 
+            </option>
         </select>
     </div>
 </div>
