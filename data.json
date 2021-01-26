@@ -18,7 +18,7 @@
       "avatar_url": "https://images.unsplash.com/photo-1530878131793-cc5cbcba9a47?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=335&q=80",
       "id": 3,
       "since": 1610971262289,
-      "schoolYear": "2nd-year-highSchool"
+      "schoolYear": "3rd-year-highSchool"
     },
     {
       "name": "James",
@@ -29,6 +29,16 @@
       "id": 4,
       "since": 1610971575250,
       "schoolYear": "1st-year-highSchool"
+    },
+    {
+      "name": "Student Test",
+      "birth": "1980-11-11",
+      "email": "student@test.com",
+      "schoolYear": "1st-year-highSchool",
+      "weekHours": "20",
+      "avatar_url": "https://images.unsplash.com/photo-1539302730708-a9ccbdd8332b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+      "id": 5,
+      "since": 1611665374416
     }
   ],
   "teachers": [

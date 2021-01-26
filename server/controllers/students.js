@@ -63,7 +63,7 @@ module.exports = {
                 if(error)
                     return response.status(500).send("Error writing file");
                 else 
-                    return response.redirect("/");
+                    return response.redirect("/students");
             }
         );
         
@@ -152,7 +152,7 @@ module.exports = {
                 if(error)
                     return response.send(error);
                 else
-                    return response.redirect("/");
+                    return response.redirect("/students");
             }
         );
     }
